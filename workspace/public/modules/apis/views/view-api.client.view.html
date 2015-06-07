@@ -1,0 +1,37 @@
+<section data-ng-controller="ApisController" data-ng-init="findOne()">
+	<div class="page-header">
+		<h1 data-ng-bind="api.name"></h1>
+	</div>
+	<div class="pull-right">
+		<a class="btn btn-primary" href="/#!/apis/{{api.id}}/edit">
+			<i class="glyphicon glyphicon-edit"></i>
+		</a>
+		<a class="btn btn-primary" data-ng-click="teste();">
+			<i class="glyphicon glyphicon-trash"></i>
+		</a>
+	</div>
+	<p class="clearfix">
+		<table class="table table-striped">
+			<tr>
+				<th>Attribute</th>
+				<th>Value</th>
+			</tr>
+			<tr>
+				<td>public_dns</td>
+				<td>{{api.public_dns}}</td>
+			</tr>
+			<tr>
+				<td>path</td>
+				<td>{{api.path}}</td>
+			</tr>
+			<tr>
+				<td>target_url</td>
+				<td>{{api.target_url}}</td>
+			</tr>
+			<tr>
+				<td>strip_path</td>
+				<td>{{api.strip_path}}</td>
+			</tr>
+		</table>
+	</p>
+</section>
