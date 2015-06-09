@@ -1,41 +1,32 @@
-FROM ubuntu
-MAINTAINER Rodrigo Sanches Devigo <rsdevigo@gmail.com>
+FROM node:0.10.36
 
-RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
+MAINTAINER mike@mikangali.com
 
-RUN echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | tee /etc/apt/sources.list.d/mongodb.list
+RUN apt-get update
 
-RUN apt-get update && apt-get upgrade -y
-RUN apt-get install git python build-essential wget screen tmux curl vim mongodb-org -y
-RUN sudo service mongod start
+WORKDIR /app
 
-RUN mkdir /data
-RUN mkdir /data/db
+# Install meanjs tools
+RUN npm install -g grunt-cli
+RUN npm install -g bower
+RUN npm install -g yo
+RUM npm install -g generator-meanjs
 
-RUN mkdir /Development
-RUN cd /Development && git clone git://github.com/joyent/node
+# Get mean quick start app 
+RUN git clone https://github.com/meanjs/mean.git .
 
-RUN cd /Development/node && ./configure && make && make install
-RUN rm -rf /Development/node
-RUN chmod 777 -R /Development
+# ADD package.json /app
+# ADD .bowerrc /app
 
-RUN npm install -g bower grunt-cli yo generator-meanjs express
-
-ADD package.json /home/mean/package.json
+# Install Mean.JS packages
 RUN npm install
 
 # Manually trigger bower. Why doesnt this work via npm install?
-ADD .bowerrc /home/mean/.bowerrc
-ADD bower.json /home/mean/bower.json
 RUN bower install --config.interactive=false --allow-root
 
-# Make everything available for start
-ADD . /home/mean
-
 # currently only works for development
-ENV NODE_ENV production
+ENV NODE_ENV development
 
-# Port 3000 for server
-# Port 35729 for livereload
+# Expose ports: server (3000), livereload (35729)
 EXPOSE 3000 35729
 CMD ["grunt"]
