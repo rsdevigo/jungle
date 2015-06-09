@@ -1,4 +1,4 @@
-FROM node:0.10.36
+FROM node
 
 MAINTAINER mike@mikangali.com
 
@@ -10,10 +10,10 @@ WORKDIR /app
 RUN npm install -g grunt-cli
 RUN npm install -g bower
 RUN npm install -g yo
-RUM npm install -g generator-meanjs
+RUN npm install -g generator-meanjs
 
 # Get mean quick start app 
-RUN git clone https://github.com/meanjs/mean.git .
+RUN git clone https://github.com/rsdevigo/kongui.git .
 
 # ADD package.json /app
 # ADD .bowerrc /app
