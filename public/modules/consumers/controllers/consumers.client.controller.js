@@ -60,6 +60,7 @@ angular.module('consumers').controller('ConsumersController', ['$scope', '$state
 
 		// Find existing Consumer
 		$scope.findOne = function() {
+			console.log($stateParams.consumerId);
 			$scope.consumer = Consumers.get({ 
 				consumerId: $stateParams.consumerId
 			});

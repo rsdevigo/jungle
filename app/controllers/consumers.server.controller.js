@@ -13,7 +13,6 @@ var mongoose = require('mongoose'),
  * Create a Api
  */
 exports.create = function(req, res) {
-	var api = new Api(req.body);
 	//api.user = req.user;
 
 	return kong.create('/consumers/', req, res);
@@ -33,16 +32,16 @@ exports.create = function(req, res) {
  * Show the current Api
  */
 exports.read = function(req, res) {
-	res.json(JSON.parse(req.api));
+	res.json(JSON.parse(req.entity));
 };
 
 /**
  * Update a Api
  */
 exports.update = function(req, res) {
-	var api = JSON.parse(req.api);
+	var entity = JSON.parse(req.entity);
 
-	req.api = _.extend(api , req.body);
+	req.entity = _.extend(entity , req.body);
 	return kong.update('/consumers/', req, res);
 
 	/*api.save(function(err) {
@@ -60,7 +59,7 @@ exports.update = function(req, res) {
  * Delete an Api
  */
 exports.delete = function(req, res) {
-	req.api = JSON.parse(req.api);
+	req.entity = JSON.parse(req.entity);
 	return kong.remove('/consumers/', req, res);
 	/*api.remove(function(err) {
 		if (err) {
