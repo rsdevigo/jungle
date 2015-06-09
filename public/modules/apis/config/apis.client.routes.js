@@ -20,6 +20,10 @@ angular.module('apis').config(['$stateProvider',
 		state('editApi', {
 			url: '/apis/:apiId/edit',
 			templateUrl: 'modules/apis/views/edit-api.client.view.html'
+		}).
+		state('viewPluginApi', {
+			url: '/apis/:apiId/plugins',
+			templateUrl: 'modules/apis/views/view-api-plugin.client.view.html'
 		});
 	}
 ]);

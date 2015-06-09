@@ -12,6 +12,7 @@ exports.list = function(endpoint, req, res) {
 	_.each(req.query, function(value, key){
 		params += key+'='+value+'&';
 	});
+	console.log(config.app.kongUrl+endpoint+params);
 	request(config.app.kongUrl+endpoint+params, function(error, response, body){
 		if (response.statusCode === 200) {
 			return res.status(200).jsonp(JSON.parse(body).data);
@@ -36,13 +37,13 @@ exports.create = function(endpoint, req, res) {
 
 exports.read = function(endpoint, req, res, id, next) {
 	return request(config.app.kongUrl+endpoint+id, function(error, response, body){
-		req.api = body;
+		req.entity = body;
 		next();
 	});
 };
 
 exports.update = function(endpoint, req, res) {
-	return request.patch({url: config.app.kongUrl+endpoint+req.api.id, form: req.api}, function(error, response, body){
+	return request.patch({url: config.app.kongUrl+endpoint+req.entity.id, form: req.entity}, function(error, response, body){
 		if (response.statusCode === 200) {
 			return res.status(200).json(JSON.parse(body));
 		} else {
@@ -52,7 +53,7 @@ exports.update = function(endpoint, req, res) {
 };
 
 exports.remove = function(endpoint, req, res) {
-	return request.del(config.app.kongUrl+endpoint+req.api.id, function(error, response, body){
+	return request.del(config.app.kongUrl+endpoint+req.entity.id, function(error, response, body){
 		if (response.statusCode === 204) {
 			return res.status(204).send();
 		} else {

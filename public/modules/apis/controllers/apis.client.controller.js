@@ -1,8 +1,8 @@
 'use strict';
 
 // Apis controller
-angular.module('apis').controller('ApisController', ['$scope', '$stateParams', '$location', 'Authentication', 'Apis',
-	function($scope, $stateParams, $location, Authentication, Apis) {
+angular.module('apis').controller('ApisController', ['$scope', '$stateParams', '$location', 'Authentication', 'Apis', 'Plugins', 'PLUGINSAVAILABLE',
+	function($scope, $stateParams, $location, Authentication, Apis, Plugins, PLUGINSAVAILABLE) {
 		$scope.authentication = Authentication;
 
 		// Create new Api
@@ -32,7 +32,7 @@ angular.module('apis').controller('ApisController', ['$scope', '$stateParams', '
 		};
 
 		// Remove existing Api
-		$scope.teste = function(api) {
+		$scope.remove = function(api) {
 			if ( api ) { 
 				api.$remove();
 
@@ -72,5 +72,50 @@ angular.module('apis').controller('ApisController', ['$scope', '$stateParams', '
 				apiId: $stateParams.apiId
 			});
 		};
+
+		$scope.listPluginByApi = function() {
+			$scope.pluginAvailable = PLUGINSAVAILABLE;
+			$scope.findOne();
+			$scope.plugins = Plugins.query({ 
+				apiId: $stateParams.apiId
+			});	
+		};
+
+		$scope.initPluginForm = function() {
+			$scope.pluginAvailable = PLUGINSAVAILABLE;
+			$scope.currentPlugin = null;
+			$scope.value = {};
+		};
+
+		$scope.removePlugin = function(plugin) {
+			if ( plugin ) { 
+				plugin.$remove();
+
+				for (var i in $scope.plugins) {
+					if ($scope.plugins [i] === plugin) {
+						$scope.plugins.splice(i, 1);
+					}
+				}
+			}
+		};
+
+		$scope.createPlugin = function() {
+			if ($scope.currentPlugin !== null) {
+				var plugin = new Plugins({
+					value: $scope.value,
+					name: $scope.currentPlugin.name,
+					api_id: $stateParams.apiId
+				});
+				plugin.$save(function(response) {
+					$scope.initPluginForm();
+					$scope.listPluginByApi();
+					$location.path('apis/' + response.api_id + '/plugins');
+				}, function(errorResponse) {
+					$scope.error = errorResponse.data;
+				});
+			}
+		};
+
+
 	}
 ]);

@@ -13,7 +13,16 @@ module.exports = function(app) {
 		.get(apis.read)
 		.put(users.requiresLogin, apis.update)
 		.delete(users.requiresLogin, apis.delete);
+	app.route('/apis/:apiId/plugins')
+		.get(apis.pluginList)
+		.post(apis.pluginCreate);
+
+	app.route('/apis/:apiId/plugins/:pluginId')
+		.get(apis.pluginRead)
+		.put(users.requiresLogin, apis.updatePlugin)
+		.delete(apis.deletePlugin);
 
 	// Finish by binding the Api middleware
 	app.param('apiId', apis.apiByID);
+	app.param('pluginId', apis.pluginByID);
 };

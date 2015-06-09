@@ -1,0 +1,36 @@
+<alert type="info" ng-if="currentPlugin !== null">Check out the Documents for {{currentPlugin.name}} in <a href="{{currentPlugin.docUrl}}">{{currentPlugin.docUrl}}</a></alert>
+<span ng-repeat="field in currentPlugin.schema">
+	<div class="form-group">
+		<span ng-if="field.type == 'integer'">
+			<label class="control-label" for="{{field.name}}">{{field.label}}</label>
+			<input ng-model="value[field.name]" type="number" class="form-control" />
+		</span>
+		<span ng-if="field.type == 'enum'">
+			<label class="control-label" for="{{field.name}}">{{field.label}}</label>
+			<select ng-model="value[field.name]" id="field.name" class="form-control" required>
+                <option value = "">Select</option>
+                <option value="{{f.value}}" ng-repeat="f in field.values">
+                	{{f.label}}
+                </option>
+            </select>
+		</span>
+		<span ng-if="field.type == 'string'">
+			<label class="control-label" for="{{field.name}}">{{field.label}}</label>
+			<input data-ng-model="value[field.name]" type="text" class="form-control"  />
+		</span>
+		<span ng-if="field.type == 'boolean'">
+			<div class="checkbox">
+			  <label>
+			    <input type="checkbox" ng-model="value[field.name]" value="">
+			    {{field.label}}
+			  </label>
+			</div>
+		</span>
+	</div>
+</span>
+<div class="form-group">
+    <input type="submit" value="Add plugin" class="btn btn-default">
+</div>
+<div data-ng-show="error" class="text-danger">
+	<strong data-ng-bind="error"></strong>
+</div>
