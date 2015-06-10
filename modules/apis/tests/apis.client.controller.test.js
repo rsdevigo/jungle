@@ -1,5 +1,3 @@
-'use strict';
-
 (function() {
 	// Apis Controller Spec
 	describe('Apis Controller Tests', function() {
@@ -35,7 +33,7 @@
 		// The injector ignores leading and trailing underscores here (i.e. _$httpBackend_).
 		// This allows us to inject a service but then attach it to a variable
 		// with the same name as the service.
-		beforeEach(inject(function($controller, $rootScope, _$location_, _$stateParams_, _$httpBackend_) {
+		beforeEach(inject(function($controller, $rootScope, _$location_, _$stateParams_, _$httpBackend_, _KONGURL_) {
 			// Set a new global scope
 			scope = $rootScope.$new();
 
@@ -43,6 +41,7 @@
 			$stateParams = _$stateParams_;
 			$httpBackend = _$httpBackend_;
 			$location = _$location_;
+			$KONGURL = _KONGURL_;
 
 			// Initialize the Apis controller.
 			ApisController = $controller('ApisController', {
@@ -53,14 +52,18 @@
 		it('$scope.find() should create an array with at least one Api object fetched from XHR', inject(function(Apis) {
 			// Create sample Api using the Apis service
 			var sampleApi = new Apis({
-				name: 'New Api'
+				name: 'New Api',
+				public_dns: 'api',
+				path: '/path',
+				strip_path: true,
+				target_url: 'http://api.com'
 			});
 
 			// Create a sample Apis array that includes the new Api
-			var sampleApis = [sampleApi];
+			var sampleApis = { data: [sampleApi] };
 
 			// Set GET response
-			$httpBackend.expectGET('apis').respond(sampleApis);
+			$httpBackend.expectGET($KONGURL+'/apis').respond(sampleApis);
 
 			// Run controller functionality
 			scope.find();
@@ -73,7 +76,11 @@
 		it('$scope.findOne() should create an array with one Api object fetched from XHR using a apiId URL parameter', inject(function(Apis) {
 			// Define a sample Api object
 			var sampleApi = new Apis({
-				name: 'New Api'
+				name: 'New Api',
+				public_dns: 'api',
+				path: '/path',
+				strip_path: true,
+				target_url: 'http://api.com'
 			});
 
 			// Set the URL parameter
@@ -93,20 +100,32 @@
 		it('$scope.create() with valid form data should send a POST request with the form input values and then locate to new object URL', inject(function(Apis) {
 			// Create a sample Api object
 			var sampleApiPostData = new Apis({
-				name: 'New Api'
+				name: 'New Api',
+				public_dns: 'api',
+				path: '/path',
+				strip_path: true,
+				target_url: 'http://api.com'
 			});
 
 			// Create a sample Api response
 			var sampleApiResponse = new Apis({
-				_id: '525cf20451979dea2c000001',
-				name: 'New Api'
+				id: '525cf20451979dea2c000001',
+				name: 'New Api',
+				public_dns: 'api',
+				path: '/path',
+				strip_path: true,
+				target_url: 'http://api.com'
 			});
 
 			// Fixture mock form input values
 			scope.name = 'New Api';
+			scope.public_dns = 'api';
+			scope.path = '/path';
+			scope.strip_path = true;
+			scope.target_url = 'http://api.com';
 
 			// Set POST response
-			$httpBackend.expectPOST('apis', sampleApiPostData).respond(sampleApiResponse);
+			$httpBackend.expectPOST($KONGURL+'/apis', sampleApiPostData).respond(sampleApiResponse);
 
 			// Run controller functionality
 			scope.create();
@@ -116,34 +135,38 @@
 			expect(scope.name).toEqual('');
 
 			// Test URL redirection after the Api was created
-			expect($location.path()).toBe('/apis/' + sampleApiResponse._id);
+			expect($location.path()).toBe('/apis/' + sampleApiResponse.id);
 		}));
 
 		it('$scope.update() should update a valid Api', inject(function(Apis) {
 			// Define a sample Api put data
 			var sampleApiPutData = new Apis({
-				_id: '525cf20451979dea2c000001',
-				name: 'New Api'
+				id: '525cf20451979dea2c000001',
+				name: 'New Api',
+				public_dns: 'api',
+				path: '/path',
+				strip_path: true,
+				target_url: 'http://api.com'
 			});
 
 			// Mock Api in scope
 			scope.api = sampleApiPutData;
 
 			// Set PUT response
-			$httpBackend.expectPUT(/apis\/([0-9a-fA-F]{24})$/).respond();
+			$httpBackend.expectPATCH(/apis\/([0-9a-fA-F]{24})$/).respond();
 
 			// Run controller functionality
 			scope.update();
 			$httpBackend.flush();
 
 			// Test URL location to new object
-			expect($location.path()).toBe('/apis/' + sampleApiPutData._id);
+			expect($location.path()).toBe('/apis/' + sampleApiPutData.id);
 		}));
 
 		it('$scope.remove() should send a DELETE request with a valid apiId and remove the Api from the scope', inject(function(Apis) {
 			// Create new Api object
 			var sampleApi = new Apis({
-				_id: '525a8422f6d0f87f0e407a33'
+				id: '525a8422f6d0f87f0e407a33'
 			});
 
 			// Create new Apis array and include the Api

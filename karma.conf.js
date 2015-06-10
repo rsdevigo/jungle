@@ -20,14 +20,14 @@ module.exports = function(config) {
 		reporters: ['progress'],
 
 		// Web server port
-		port: 9876,
+		port: 8080,
 
 		// Enable / disable colors in the output (reporters and logs)
 		colors: true,
 
 		// Level of logging
 		// Possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
-		logLevel: config.LOG_INFO,
+		logLevel: config.LOG_WARN,
 
 		// Enable / disable watching file and executing tests whenever any file changes
 		autoWatch: true,
@@ -41,6 +41,11 @@ module.exports = function(config) {
 		// - PhantomJS
 		// - IE (only Windows)
 		browsers: ['PhantomJS'],
+
+		plugins: [
+	      "karma-phantomjs-launcher",
+	      "karma-jasmine"
+	    ],
 
 		// If browser does not capture in given timeout [ms], kill it
 		captureTimeout: 60000,
