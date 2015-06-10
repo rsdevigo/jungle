@@ -1,4 +1,5 @@
 # JUNGLE
+[![Build Status](https://travis-ci.org/rsdevigo/jungle.svg?branch=master)](https://travis-ci.org/rsdevigo/jungle)
 
 ![](https://i.imgur.com/MuFFweF.png)
 
