@@ -127,9 +127,10 @@ module.exports = function (grunt) {
       options: {
         csslintrc: '.csslintrc',
       },
-      all: {
-        src:'<%= yeoman.app %>/modules/**/*.css'
+      all : {
+        src:'<%= applicationCSSFiles %>'
       }
+      
     },
 
     // Empties folders to start fresh
@@ -213,8 +214,8 @@ module.exports = function (grunt) {
       dev: {
         NODE_ENV: 'development'
       },
-      secure: {
-        NODE_ENV: 'secure'
+      prod: {
+        NODE_ENV: 'production'
       }
     },
 
@@ -222,7 +223,7 @@ module.exports = function (grunt) {
     cssmin: {
       dist: {
           files: {
-            './dist/application.min.css': '<%= applicationCSSFiles %>'
+            '<%= yeoman.dist %>/application.min.css': '<%= applicationCSSFiles %>'
           }
       }
     },
@@ -249,7 +250,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.app %>',
-          src: ['*.html', 'modules/*/views/{,*/}*.html'],
+          src: ['*.html', '<%= yeoman.app %>/modules/*/views/{,*/}*.html'],
           dest: '<%= yeoman.dist %>'
         }]
       }
@@ -274,23 +275,18 @@ module.exports = function (grunt) {
           cwd: '<%= yeoman.app %>',
           dest: '<%= yeoman.dist %>',
           src: [
-            '*.{ico,png,txt}',
-            '.htaccess',
-            '*.html',
-            'modules/{,*/}*.html',
-            'images/{,*/}*.{webp}',
-            'styles/fonts/{,*/}*.*'
+            'modules/*/img/{,*/}*.{png,jpg,jpeg,gif,webp,svg,ico}'
           ]
-        }, {
+        },
+        {
           expand: true,
-          cwd: '.tmp/images',
-          dest: '<%= yeoman.dist %>/images',
-          src: ['generated/*']
-        }, {
-          expand: true,
-          cwd: 'bower_components/bootstrap/dist',
-          src: 'fonts/*',
-          dest: '<%= yeoman.dist %>'
+          dot: true,
+          cwd: '<%= yeoman.app %>',
+          dest: '<%= yeoman.dist %>/fonts/',
+          flatten: true,
+          src: [
+            '<%= yeoman.app %>/lib/*/fonts/{,*/}*.*'
+          ]
         }]
       },
       styles: {
@@ -322,6 +318,15 @@ module.exports = function (grunt) {
         configFile: 'test/karma.conf.js',
         singleRun: true
       }
+    },
+
+    htmlrefs: {
+      dist: {
+        /** @required  - string including grunt glob variables */
+        src: '<%= yeoman.app %>/index.html',
+        /** @optional  - string directory name*/
+        dest: '<%= yeoman.dist %>/index.html',
+      }
     }
   });
 
@@ -330,14 +335,14 @@ module.exports = function (grunt) {
     var init = require('./config/init')();
     var config = require('./config/config');
 
-    grunt.config.set('applicationJavaScriptFiles', config.assets.js);
-    grunt.config.set('applicationCSSFiles', config.assets.css);
-    grunt.log.warn( config.assets.css);
+    grunt.config.set('applicationJavaScriptFiles', config.assets.lib.js.concat(config.assets.js));
+    grunt.config.set('applicationCSSFiles', config.assets.lib.css.concat(config.assets.css));
+    grunt.log.warn(config.assets.lib.css.concat(config.assets.css));
   });
 
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
     if (target === 'dist') {
-      return grunt.task.run(['build', 'connect:dist:keepalive']);
+      return grunt.task.run(['connect:dist:keepalive']);
     }
 
     grunt.task.run([
@@ -364,28 +369,9 @@ module.exports = function (grunt) {
     'karma'
   ]);
 
-  // grunt.registerTask('build', [
-  //   'clean:dist',
-  //   'wiredep',
-  //   //'useminPrepare',
-  //   'concurrent:dist',
-  //   'autoprefixer',
-  //   'concat',
-  //   'ngAnnotate',
-  //   'copy:dist',
-  //   'cdnify',
-  //   'cssmin',
-  //   'uglify',
-  //   'filerev',
-  //   //'usemin',
-  //   'htmlmin'
-  // ]);
-
-  grunt.registerTask('build', ['env:dev','loadConfig', 'ngAnnotate', 'uglify', 'cssmin', 'htmlmin']);
+  grunt.registerTask('build', ['clean:dist','env:dev', 'jshint','wiredep','loadConfig', 'ngAnnotate', 'uglify', 'cssmin', 'htmlmin', 'copy:dist','htmlrefs']);
 
   grunt.registerTask('default', [
-    'newer:jshint',
-    'test',
-    'build'
+    'build',
   ]);
 };

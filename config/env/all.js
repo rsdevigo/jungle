@@ -1,16 +1,6 @@
 'use strict';
 
 module.exports = {
-	app: {
-		title: 'KongUI',
-		description: 'GUI of Kong API Gateway',
-		keywords: 'GUI, Kong, API',
-		kongUrl: 'http://localhost:8001'
-	},
-	port: process.env.PORT || 3000,
-	templateEngine: 'swig',
-	sessionSecret: 'MEAN',
-	sessionCollection: 'sessions',
 	assets: {
 		lib: {
 			css: [
