@@ -1,0 +1,14 @@
+<section data-ng-controller="ConsumersController" data-ng-init="find()">
+    <div class="page-header">
+        <h1>Consumers</h1>
+    </div>
+    <div class="list-group">
+        <a data-ng-repeat="consumer in consumers.data" data-ng-href="#!/consumers/{{consumer.id}}" class="list-group-item">
+			<h4 class="list-group-item-heading" >Username: {{consumer.username}}</h4>
+            <h4 class="list-group-item-heading" >Custom ID: {{consumer.custom_id}}</h4>
+        </a>
+    </div>
+    <div class="alert alert-warning text-center" data-ng-hide="!consumers.$resolved || consumers.data.length">
+    	No Consumers yet, why don't you <a href="/#!/consumers/create">create one</a>?
+    </div>
+</section>

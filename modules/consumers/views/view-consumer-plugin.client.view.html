@@ -1,0 +1,18 @@
+<section class="col-md-6" data-ng-controller="ConsumersController" data-ng-init="initPluginForm()">
+	<div class="page-header">
+		<h1>Add a plugin</h1>
+	</div>
+	<div class="col-md-12">
+        <form class="form-horizontal" data-ng-submit="createPlugin()" novalidate>
+            <fieldset>
+                <div class="form-group">
+                	<label class="control-label" for="name">Select the plugin to configure</label>
+	                <select ng-options="item as item.label for item in pluginAvailable track by item.name" ng-model="currentPlugin" id="plugin_name" class="form-control" required>
+	                    <option value = "">Select</option>
+	                </select>
+                </div>
+                <span plugin-form></span>
+            </fieldset>
+        </form>
+    </div>
+</section>

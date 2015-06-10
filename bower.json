@@ -1,5 +1,5 @@
 {
-	"name": "kongui",
+	"name": "jungle",
 	"version": "0.0.1",
 	"description": "GUI of Kong API Gateway",
 	"dependencies": {

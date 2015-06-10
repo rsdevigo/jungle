@@ -1,0 +1,32 @@
+<section data-ng-controller="ConsumersController" data-ng-init="findOne()">
+	<div class="page-header">
+		<h1 data-ng-bind="consumer.custom_id"></h1>
+	</div>
+	<div class="pull-right">
+		<a class="btn btn-primary" href="/#!/consumers/{{consumer.id}}/edit">
+			<i class="glyphicon glyphicon-edit"></i> Edit Consumer
+		</a>
+		<a class="btn btn-success" href="/#!/consumers/{{consumer.id}}/plugins">
+			<i class="fa fa-puzzle-piece"></i> View the actives plugins
+		</a>
+		<a class="btn btn-primary" data-ng-click="remove();">
+			<i class="glyphicon glyphicon-trash"></i> Remove Consumer
+		</a>
+	</div>
+	<p class="clearfix">
+		<table class="table table-striped">
+			<tr>
+				<th>Attribute</th>
+				<th>Value</th>
+			</tr>
+			<tr>
+				<td>username</td>
+				<td>{{consumer.username}}</td>
+			</tr>
+			<tr>
+				<td>custom_id</td>
+				<td>{{consumer.custom_id}}</td>
+			</tr>
+		</table>
+	</p>
+</section>
