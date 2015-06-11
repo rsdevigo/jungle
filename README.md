@@ -32,12 +32,12 @@ Running `grunt test` will run the unit tests with karma.
 
 ## Roadmap
 
-- Error treatment for messages from server.
+- Error treatment for messages from server. 
 - Paginate results using the *next* attribute of response from server.
-- Add the all plugins in PLUGINSAVAILABLE.
+- Add the all plugins in PLUGINSAVAILABLE. ![](http://cmsresources.windowsphone.com/windowsphone/lv-LV/How-to/wp7/inline/office-icon-done.png)
 - Create a active plugin per consumer in API section.
-- Add favicon and Jungle logo
-- Dockerfile
-- Write the tests
-- Add travis webhook
+- Add favicon and Jungle logo ![](http://cmsresources.windowsphone.com/windowsphone/lv-LV/How-to/wp7/inline/office-icon-done.png)
+- Dockerfile ![](http://cmsresources.windowsphone.com/windowsphone/lv-LV/How-to/wp7/inline/office-icon-done.png)
+- Write the tests ![](http://cmsresources.windowsphone.com/windowsphone/lv-LV/How-to/wp7/inline/office-icon-done.png)
+- Add travis webhook ![](http://cmsresources.windowsphone.com/windowsphone/lv-LV/How-to/wp7/inline/office-icon-done.png)
 
