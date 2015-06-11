@@ -30,7 +30,7 @@ In ./modules/core/config/core.client.constants.js change the KONGURL.
 
 Running `grunt test` will run the unit tests with karma.
 
-## Roadmap
+## Roadmap for version 0.0.1
 
 - Error treatment for messages from server. 
 - Paginate results using the *next* attribute of response from server.
