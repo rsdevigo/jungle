@@ -18,7 +18,8 @@ module.exports = {
 				'lib/angular-ui-router/release/angular-ui-router.js',
 				'lib/angular-ui-utils/ui-utils.js',
 				'lib/angular-bootstrap/ui-bootstrap-tpls.js',
-				'lib/angular-breadcrumb/release/angular-breadcrumb.js'
+				'lib/angular-breadcrumb/release/angular-breadcrumb.js',
+				'lib/angular-xeditable/dist/js/xeditable.js'
 			]
 		},
 		css: [
