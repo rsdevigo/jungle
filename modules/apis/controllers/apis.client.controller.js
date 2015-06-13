@@ -62,7 +62,7 @@ angular.module('apis').controller('ApisController', ['$scope', '$stateParams', '
 
 		// Find a list of Apis
 		$scope.find = function() {
-			$scope.apis = Apis.query();
+			$scope.apis = Apis.query($location.search());
 		};
 
 		// Find existing Api
@@ -114,6 +114,20 @@ angular.module('apis').controller('ApisController', ['$scope', '$stateParams', '
 				});
 			}
 		};
+
+		$scope.saveApi = function(data, id) {
+			var api = new Apis (data);
+			api.id = id;
+			api.$update(function() {
+				for (var i in $scope.plugins.data) {
+					if ($scope.plugins.data [i] . id === id) {
+						angular.extend($scope.plugins.data [i], data);
+					}
+				}
+			}, function(errorResponse) {
+				$scope.error = errorResponse.data;
+			});
+		}
 
 
 	}

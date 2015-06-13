@@ -11,7 +11,8 @@ angular.module('apis').config(['$stateProvider',
 			ncyBreadcrumb: {
 				label: 'List Apis',
 				parent: 'home'
-			}
+			},
+			reloadOnSearch: true
 		}).
 		state('createApi', {
 			url: '/apis/create',
@@ -19,7 +20,8 @@ angular.module('apis').config(['$stateProvider',
 			ncyBreadcrumb: {
 				label: 'Create API',
 				parent: 'home'
-			}
+			},
+			reloadOnSearch: true
 		}).
 		state('viewApi', {
 			url: '/apis/:apiId',
@@ -27,7 +29,8 @@ angular.module('apis').config(['$stateProvider',
 			ncyBreadcrumb: {
 				label: 'View API',
 				parent: 'listApis'
-			}
+			},
+			reloadOnSearch: true
 		}).
 		state('editApi', {
 			url: '/apis/:apiId/edit',
@@ -35,7 +38,8 @@ angular.module('apis').config(['$stateProvider',
 			ncyBreadcrumb: {
 				label: 'Edit API',
 				parent: 'viewApi'
-			}
+			},
+			reloadOnSearch: true
 		}).
 		state('viewPluginApi', {
 			url: '/apis/:apiId/plugins',
@@ -43,7 +47,8 @@ angular.module('apis').config(['$stateProvider',
 			ncyBreadcrumb: {
 				label: 'List Plugins per API',
 				parent: 'viewApi'
-			}
+			},
+			reloadOnSearch: true
 		});
 	}
 ]);
