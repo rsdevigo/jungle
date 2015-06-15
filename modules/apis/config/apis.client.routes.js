@@ -45,7 +45,7 @@ angular.module('apis').config(['$stateProvider',
 			url: '/apis/:apiId/plugins',
 			templateUrl: 'modules/apis/views/view-api-plugin.client.view.html',
 			ncyBreadcrumb: {
-				label: 'List Plugins per API',
+				label: 'List Plugins for API',
 				parent: 'viewApi'
 			},
 			reloadOnSearch: true

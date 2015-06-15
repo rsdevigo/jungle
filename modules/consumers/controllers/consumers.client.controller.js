@@ -1,8 +1,8 @@
 'use strict';
 
 // Consumers controller
-angular.module('consumers').controller('ConsumersController', ['$scope', '$stateParams', '$location', 'Consumers', 'PLUGINSAVAILABLE', 'Plugins',
-	function($scope, $stateParams, $location, Consumers, PLUGINSAVAILABLE, Plugins) {
+angular.module('consumers').controller('ConsumersController', ['$scope', '$stateParams', '$location', 'Consumers', 'PLUGINSAVAILABLE', 'PluginsConfigurations', 'Apis', 'Plugins',
+	function($scope, $stateParams, $location, Consumers, PLUGINSAVAILABLE, PluginsConfigurations, Apis, Plugins) {
 
 		// Create new Consumer
 		$scope.create = function() {
@@ -54,7 +54,7 @@ angular.module('consumers').controller('ConsumersController', ['$scope', '$state
 
 		// Find a list of Consumers
 		$scope.find = function() {
-			$scope.consumers = Consumers.query();
+			$scope.consumers = Consumers.query($location.search());
 		};
 
 		// Find existing Consumer
@@ -65,19 +65,32 @@ angular.module('consumers').controller('ConsumersController', ['$scope', '$state
 			});
 		};
 
+		$scope.listPluginByConsumer = function() {
+			$scope.pluginAvailable = PLUGINSAVAILABLE;
+			$scope.findOne();
+			$scope.apis = Apis.query({size: 100000});
+			$scope.plugins = PluginsConfigurations.query({
+				consumer_id : $stateParams.consumerId
+			});
+		};
+
+
 		$scope.initPluginForm = function() {
 			$scope.pluginAvailable = PLUGINSAVAILABLE;
 			$scope.currentPlugin = null;
+			$scope.apis = Apis.query({size: 100000});
+			$scope.api_id = null;
 			$scope.value = {};
 		};
 
 		$scope.removePlugin = function(plugin) {
 			if ( plugin ) { 
-				plugin.$remove();
+				var pluginResource = new Plugins(plugin);
+				pluginResource.$remove();
 
-				for (var i in $scope.plugins) {
-					if ($scope.plugins [i] === plugin) {
-						$scope.plugins.splice(i, 1);
+				for (var i in $scope.plugins.data) {
+					if ($scope.plugins.data [i] === plugin) {
+						$scope.plugins.data.splice(i, 1);
 					}
 				}
 			}
@@ -88,16 +101,30 @@ angular.module('consumers').controller('ConsumersController', ['$scope', '$state
 				var plugin = new Plugins({
 					value: $scope.value,
 					name: $scope.currentPlugin.name,
-					api_id: $stateParams.apiId
+					consumer_id: $stateParams.consumerId,
+					api_id: $scope.api_id.id
 				});
 				plugin.$save(function(response) {
 					$scope.initPluginForm();
-					$scope.listPluginByApi();
-					$location.path('consumers/' + response.consumer_id + '/plugins');
+					$location.path('apis/' + response.api_id + '/plugins');
 				}, function(errorResponse) {
 					$scope.error = errorResponse.data;
 				});
 			}
 		};
+
+		$scope.saveConsumer = function(data, id) {
+			var consumer = new Consumers (data);
+			consumer.id = id;
+			consumer.$update(function() {
+				for (var i in $scope.consumers.data) {
+					if ($scope.consumers.data [i] . id === id) {
+						angular.extend($scope.consumers.data [i], data);
+					}
+				}
+			}, function(errorResponse) {
+				$scope.error = errorResponse.data;
+			});
+		}
 	}
 ]);

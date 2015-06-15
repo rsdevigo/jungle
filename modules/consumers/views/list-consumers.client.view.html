@@ -2,12 +2,45 @@
     <div class="page-header">
         <h1>Consumers</h1>
     </div>
-    <div class="list-group">
-        <a data-ng-repeat="consumer in consumers.data" data-ng-href="#!/consumers/{{consumer.id}}" class="list-group-item">
-			<h4 class="list-group-item-heading" >Username: {{consumer.username}}</h4>
-            <h4 class="list-group-item-heading" >Custom ID: {{consumer.custom_id}}</h4>
-        </a>
-    </div>
+    <table class="table table-striped table-bordered" data-ng-hide="!consumers.data.length">
+        <tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Custom ID</th>
+            <th>Action</th>
+        </tr>
+        <tr data-ng-repeat="consumer in consumers.data"> 
+            <td>
+                {{consumer.id}}
+            </td>
+            <td>
+                <span editable-text="consumer.username" e-name="username" e-form="rowform">
+                  {{consumer.username}}
+                </span>
+            </td>
+            <td>
+                <span editable-text="consumer.custom_id" e-name="custom_id" e-form="rowform">
+                  {{consumer.custom_id}}
+                </span>
+            </td>
+            <td>
+                <form editable-form name="rowform" onbeforesave="saveConsumer($data, consumer.id)" ng-show="rowform.$visible" class="form-buttons form-inline" shown="inserted == consumer">
+                  <button type="submit" ng-disabled="rowform.$waiting" class="btn btn-primary btn-sm">
+                    Save
+                  </button>
+                  <button type="button" ng-disabled="rowform.$waiting" ng-click="rowform.$cancel()" class="btn btn-default btn-sm">
+                    Cancel
+                  </button>
+                </form>
+                <div class="buttons" ng-show="!rowform.$visible">
+                  <button class="btn btn-primary btn-xs" ng-click="rowform.$show()"><i class="glyphicon glyphicon-edit"></i> Edit Consumer Details </button>
+                  <a class="btn btn-success btn-xs" href="/#!/consumers/{{consumer.id}}">
+                    <i class="glyphicon glyphicon-eye-open"></i> View Consumer Details
+                  </a>
+                </div>  
+            </td>
+        </tr>
+    </table>
     <div class="alert alert-warning text-center" data-ng-hide="!consumers.$resolved || consumers.data.length">
     	No Consumers yet, why don't you <a href="/#!/consumers/create">create one</a>?
     </div>

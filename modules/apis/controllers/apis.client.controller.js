@@ -80,6 +80,7 @@ angular.module('apis').controller('ApisController', ['$scope', '$stateParams', '
 			});	
 		};
 
+
 		$scope.initPluginForm = function() {
 			$scope.pluginAvailable = PLUGINSAVAILABLE;
 			$scope.currentPlugin = null;
@@ -119,9 +120,9 @@ angular.module('apis').controller('ApisController', ['$scope', '$stateParams', '
 			var api = new Apis (data);
 			api.id = id;
 			api.$update(function() {
-				for (var i in $scope.plugins.data) {
-					if ($scope.plugins.data [i] . id === id) {
-						angular.extend($scope.plugins.data [i], data);
+				for (var i in $scope.apis.data) {
+					if ($scope.apis.data [i] . id === id) {
+						angular.extend($scope.apis.data [i], data);
 					}
 				}
 			}, function(errorResponse) {

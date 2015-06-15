@@ -31,3 +31,15 @@ angular.module('apis').factory('Plugins', ['$resource', 'KONGURL',
 		});
 	}
 ]);
+
+angular.module('apis').factory('PluginsConfigurations', ['$resource', 'KONGURL',
+	function($resource, KONGURL) {
+		return $resource(KONGURL+'/plugins_configurations', { pluginId: '@id'
+		}, {
+			query: {
+				method: 'GET',
+				isArray: false
+			}
+		});
+	}
+]);

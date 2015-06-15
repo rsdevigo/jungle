@@ -39,9 +39,9 @@ angular.module('consumers').config(['$stateProvider',
 		}).
 		state('viewPluginConsumer', {
 			url: '/consumers/:consumerId/plugins',
-			templateUrl: 'modules/consumers/views/view-consumer-plugin.client.view.html',
+			templateUrl: 'modules/consumers/views/view-api-plugin-consumer.client.view.html',
 			ncyBreadcrumb: {
-				label: 'List Plugins per Consumer',
+				label: 'List Plugins for Consumer',
 				parent: 'viewConsumer'
 			}
 		});
