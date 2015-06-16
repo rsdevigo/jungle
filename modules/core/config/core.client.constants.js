@@ -1,4 +1,4 @@
 'use strict';
 
 // Setting up route
-angular.module('core').constant('KONGURL', ['http://localhost:8000/kongapi']);
+angular.module('core').value('KONGURL', 'http://localhost:8000/kongapi');

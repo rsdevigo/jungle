@@ -19,7 +19,8 @@ module.exports = {
 				'lib/angular-ui-utils/ui-utils.js',
 				'lib/angular-bootstrap/ui-bootstrap-tpls.js',
 				'lib/angular-breadcrumb/release/angular-breadcrumb.js',
-				'lib/angular-xeditable/dist/js/xeditable.js'
+				'lib/angular-xeditable/dist/js/xeditable.js',
+				'lib/ngstorage/ngstorage.js'
 			]
 		},
 		css: [

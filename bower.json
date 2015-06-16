@@ -17,6 +17,7 @@
 		"font-awesome": "*",
 		"angular-breadcrumb": "*",
 		"uri.js":"*",
-		"angular-xeditable": "*"
+		"angular-xeditable": "*",
+		"ngstorage":"*"
 	}
 }

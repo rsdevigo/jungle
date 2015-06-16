@@ -1,9 +1,9 @@
 'use strict';
 
 //Consumers service used to communicate Consumers REST endpoints
-angular.module('consumers').factory('Consumers', ['$resource', 'KONGURL',
-	function($resource, KONGURL) {
-		return $resource(KONGURL+'/consumers/:consumerId', { consumerId: '@id'
+angular.module('consumers').factory('Consumers', ['$resource', '$localStorage',
+	function($resource, $localStorage) {
+		return $resource($localStorage.kongurl+'/consumers/:consumerId', { consumerId: '@id'
 		}, {
 			query: {
 				method: 'GET',

@@ -1,8 +1,8 @@
 'use strict';
 
 // Consumers controller
-angular.module('consumers').controller('ConsumersController', ['$scope', '$stateParams', '$location', '$filter', '$http', 'Consumers', 'PLUGINSAVAILABLE', 'PluginsConfigurations', 'Apis', 'Plugins', 'KONGURL',
-	function($scope, $stateParams, $location, $filter, $http, Consumers, PLUGINSAVAILABLE, PluginsConfigurations, Apis, Plugins, KONGURL) {
+angular.module('consumers').controller('ConsumersController', ['$scope', '$stateParams', '$location', '$filter', '$http', 'Consumers', 'PLUGINSAVAILABLE', 'PluginsConfigurations', 'Apis', 'Plugins', '$localStorage',
+	function($scope, $stateParams, $location, $filter, $http, Consumers, PLUGINSAVAILABLE, PluginsConfigurations, Apis, Plugins, $localStorage) {
 
 		// Create new Consumer
 		$scope.create = function() {
@@ -126,11 +126,11 @@ angular.module('consumers').controller('ConsumersController', ['$scope', '$state
 			}, function(errorResponse) {
 				$scope.error = errorResponse.data;
 			});
-		}
+		};
 
 		$scope.hasApi = function(element) {
 			return undefined !== element.api;
-		}
+		};
 
 		$scope.crudPlugin = function() {
 
@@ -148,12 +148,12 @@ angular.module('consumers').controller('ConsumersController', ['$scope', '$state
 
 			var route = routeList.route.replace(':username', $stateParams.consumerId);
 
-			$http.get(KONGURL+'/'+route).
+			$http.get($localStorage.kongurl+'/'+route).
 				success(function(data, status){
 					$scope.items = data;
 				});
 			
-		}
+		};
 
 		$scope.addRow = function() {
 			$scope.inserted = {id: null};
@@ -170,7 +170,7 @@ angular.module('consumers').controller('ConsumersController', ['$scope', '$state
 
 				var route = routeList.route.replace(':username', $stateParams.consumerId);
 
-				$http.post(KONGURL+'/'+route, data).
+				$http.post($localStorage.kongurl+'/'+route, data).
 					success(function(data, status){
 						$scope.items.data[index].id = data.id;
 					});
@@ -182,7 +182,7 @@ angular.module('consumers').controller('ConsumersController', ['$scope', '$state
 
 				var route = route.replace(':id', id);
 
-				$http.patch(KONGURL+'/'+route, data);
+				$http.patch($localStorage.kongurl+'/'+route, data);
 			}
 		};
 
@@ -196,10 +196,10 @@ angular.module('consumers').controller('ConsumersController', ['$scope', '$state
 
 			var route = route.replace(':id', id);
 
-			$http.delete(KONGURL+'/'+route).
+			$http.delete($localStorage.kongurl+'/'+route).
 				success(function(data, status){
 					$scope.items.data.splice(index, 1);
-				});;
-		}
+				});
+		};
 	}
 ]);

@@ -128,7 +128,7 @@ angular.module('apis').controller('ApisController', ['$scope', '$stateParams', '
 			}, function(errorResponse) {
 				$scope.error = errorResponse.data;
 			});
-		}
+		};
 
 
 	}

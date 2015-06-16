@@ -303,8 +303,7 @@ angular.module('apis').constant('PLUGINSAVAILABLE', [
 				'name':'remove.querystring',
 				'type' : 'string',
 				'label': 'Parameters to remove in request querystring'
-			}
-			,
+			},
 			{
 				'name':'remove.form',
 				'type' : 'string',
