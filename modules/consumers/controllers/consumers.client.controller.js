@@ -106,7 +106,7 @@ angular.module('consumers').controller('ConsumersController', ['$scope', '$state
 				});
 				plugin.$save(function(response) {
 					$scope.initPluginForm();
-					$location.path('apis/' + response.api_id + '/plugins');
+					$location.path('consumers/' + response.consumer_id + '/plugins');
 				}, function(errorResponse) {
 					$scope.error = errorResponse.data;
 				});

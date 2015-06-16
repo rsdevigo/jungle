@@ -1,6 +1,6 @@
 <section class="col-md-6" data-ng-controller="ConsumersController" data-ng-init="listPluginByConsumer()">
 	<div class="page-header">
-		<h1>Active plugins Consumer {{consumer.name}}</h1>
+		<h1>Active plugins of Consumer {{consumer.id}}</h1>
 	</div>
 	<div class="list-group">
         <li data-ng-repeat="plugin in plugins.data" class="list-group-item">
@@ -18,7 +18,9 @@
 					</tr>
 					<tr>
 						<td>Api name</td>
-						<td data-ng-bind="{{apis | filter : {id: plugin.api_id}}}"></td>
+						<td ng-repeat="api in apis.data | filter:{id: plugin.api_id}">
+							{{api.name}}
+						</td>
 					</tr>
 					<tr ng-repeat="(key, value) in plugin.value">
 						<td>{{key}}</td>
