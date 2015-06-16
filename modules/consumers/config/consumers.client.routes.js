@@ -44,6 +44,14 @@ angular.module('consumers').config(['$stateProvider',
 				label: 'List Plugins for Consumer',
 				parent: 'viewConsumer'
 			}
+		}).
+		state('crudPluginConsumer', {
+			url: '/consumers/:consumerId/plugins/:pluginName',
+			templateUrl: 'modules/consumers/views/crud-plugin-consumer.client.view.html',
+			ncyBreadcrumb: {
+				label: 'Manage Plugin API',
+				parent: 'viewConsumer'
+			}
 		});
 	}
 ]);

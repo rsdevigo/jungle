@@ -1,8 +1,8 @@
 'use strict';
 
 // Consumers controller
-angular.module('consumers').controller('ConsumersController', ['$scope', '$stateParams', '$location', 'Consumers', 'PLUGINSAVAILABLE', 'PluginsConfigurations', 'Apis', 'Plugins',
-	function($scope, $stateParams, $location, Consumers, PLUGINSAVAILABLE, PluginsConfigurations, Apis, Plugins) {
+angular.module('consumers').controller('ConsumersController', ['$scope', '$stateParams', '$location', '$filter', '$http', 'Consumers', 'PLUGINSAVAILABLE', 'PluginsConfigurations', 'Apis', 'Plugins', 'KONGURL',
+	function($scope, $stateParams, $location, $filter, $http, Consumers, PLUGINSAVAILABLE, PluginsConfigurations, Apis, Plugins, KONGURL) {
 
 		// Create new Consumer
 		$scope.create = function() {
@@ -54,12 +54,13 @@ angular.module('consumers').controller('ConsumersController', ['$scope', '$state
 
 		// Find a list of Consumers
 		$scope.find = function() {
+			
 			$scope.consumers = Consumers.query($location.search());
 		};
 
 		// Find existing Consumer
 		$scope.findOne = function() {
-			console.log($stateParams.consumerId);
+			$scope.pluginAvailable = PLUGINSAVAILABLE;
 			$scope.consumer = Consumers.get({ 
 				consumerId: $stateParams.consumerId
 			});
@@ -125,6 +126,80 @@ angular.module('consumers').controller('ConsumersController', ['$scope', '$state
 			}, function(errorResponse) {
 				$scope.error = errorResponse.data;
 			});
+		}
+
+		$scope.hasApi = function(element) {
+			return undefined !== element.api;
+		}
+
+		$scope.crudPlugin = function() {
+
+			$scope.plugin = $filter('filter')(PLUGINSAVAILABLE, 
+				function(element){ return $stateParams.pluginName === element.name}
+			);
+
+			$scope.plugin = $scope.plugin[0];
+
+			if ($scope.plugin.api === undefined) {
+				$location.path('consumers/' + $stateParams.consumerId);
+			}
+			
+			var routeList = $filter('filter')($scope.plugin.api.routes, {action: 'list'})[0];
+
+			var route = routeList.route.replace(':username', $stateParams.consumerId);
+
+			$http.get(KONGURL+'/'+route).
+				success(function(data, status){
+					$scope.items = data;
+				});
+			
+		}
+
+		$scope.addRow = function() {
+			$scope.inserted = {id: null};
+			angular.forEach($scope.plugin.api.dao, function(field){
+				$scope.inserted[field.name] = '';
+			});
+
+		    $scope.items.data.push($scope.inserted);
+		};
+
+		$scope.saveItem = function(data, id, index) {
+			if (id === null) {
+				var routeList = $filter('filter')($scope.plugin.api.routes, {action: 'create'})[0];
+
+				var route = routeList.route.replace(':username', $stateParams.consumerId);
+
+				$http.post(KONGURL+'/'+route, data).
+					success(function(data, status){
+						$scope.items.data[index].id = data.id;
+					});
+
+			} else {
+				var routeList = $filter('filter')($scope.plugin.api.routes, {action: 'update'})[0];
+
+				var route = routeList.route.replace(':username', $stateParams.consumerId);
+
+				var route = route.replace(':id', id);
+
+				$http.patch(KONGURL+'/'+route, data);
+			}
+		};
+
+		$scope.removeItem = function(index) {
+
+			var id = $scope.items.data[index].id;
+
+			var routeList = $filter('filter')($scope.plugin.api.routes, {action: 'delete'})[0];
+
+			var route = routeList.route.replace(':username', $stateParams.consumerId);
+
+			var route = route.replace(':id', id);
+
+			$http.delete(KONGURL+'/'+route).
+				success(function(data, status){
+					$scope.items.data.splice(index, 1);
+				});;
 		}
 	}
 ]);

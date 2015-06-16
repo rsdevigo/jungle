@@ -106,7 +106,54 @@ angular.module('apis').constant('PLUGINSAVAILABLE', [
 				'type' : 'boolean',
 				'label': 'Hide Credentials'
 			}
-		]
+		],
+		api : {
+			routes : [
+				{
+					'action': 'list',
+					'route': 'consumers/:username/basicauth',
+					'method': 'GET',
+					'params': ['username']
+				},
+				{
+					'action': 'create',
+					'route': 'consumers/:username/basicauth',
+					'method': 'POST',
+					'params': ['username']
+				},
+				{
+					'action': 'view',
+					'route': 'consumers/:username/basicauth/:id',
+					'method': 'GET',
+					'params': ['username', 'id']
+				},
+				{
+					'action': 'update',
+					'route': 'consumers/:username/basicauth/:id',
+					'method': 'PATCH',
+					'params': ['username', 'id']
+				},
+				{
+					'action': 'delete',
+					'route': 'consumers/:username/basicauth/:id',
+					'method': 'DELETE',
+					'params': ['username', 'id']
+				}
+			],
+			dao : [
+				{
+					'name':'username',
+					'type' : 'string',
+					'label': 'Username'
+				},
+				{
+					'name':'password',
+					'type' : 'string',
+					'label': 'Password'
+				},
+			]
+		}
+		
 	},
 	{
 		name: 'keyauth',
@@ -123,7 +170,50 @@ angular.module('apis').constant('PLUGINSAVAILABLE', [
 				'type' : 'string',
 				'label': 'Key Names'
 			}
-		]
+		],
+		api :
+			{
+				routes : [
+					{
+						'action': 'list',
+						'route': 'consumers/:username/keyauth',
+						'method': 'GET',
+						'params': ['username']
+					},
+					{
+						'action': 'create',
+						'route': 'consumers/:username/keyauth',
+						'method': 'POST',
+						'params': ['username']
+					},
+					{
+						'action': 'view',
+						'route': 'consumers/:username/keyauth/:id',
+						'method': 'GET',
+						'params': ['username', 'id']
+					},
+					{
+						'action': 'update',
+						'route': 'consumers/:username/keyauth/:id',
+						'method': 'PATCH',
+						'params': ['username', 'id']
+					},
+					{
+						'action': 'delete',
+						'route': 'consumers/:username/keyauth/:id',
+						'method': 'DELETE',
+						'params': ['username', 'id']
+					}
+				],
+				dao : [
+					{
+						'name':'key',
+						'type' : 'string',
+						'label': 'Key'
+					}
+				]
+			}
+		
 	},
 	{
 		name: 'cors',

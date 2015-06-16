@@ -1,0 +1,44 @@
+<section data-ng-controller="ConsumersController" data-ng-init="crudPlugin()">
+	<table class="table table-striped table-bordered">
+		<tr>
+			<th ng-repeat="field in plugin.api.dao">{{field.label}}</th>
+			<th>Actions</th>
+		</tr>
+		<tr ng-repeat="item in items.data">
+			<td ng-repeat="field in plugin.api.dao">
+				
+				<span ng-if="field.type == 'integer'">
+					<span e-name="{{field.name}}" e-form="rowform" editable-number="item[field.name]" >
+						<span data-ng-bind="item[field.name]"></span>
+					</span>
+				</span>
+				<span ng-if="field.type == 'string'">
+					<span e-name="{{field.name}}" e-form="rowform" editable-text="item[field.name]" >
+						<span data-ng-bind="item[field.name]"></span>
+					</span>
+				</span>
+				<span ng-if="field.type == 'boolean'">
+					<span e-name="{{field.name}}" e-form="rowform" e-title="{{field.label}}" editable-checkbox="item[field.name]" >
+						{{ item[field.name] && "True" || "False" }}
+					</span>
+				</span>
+			</td>
+			<td style="white-space: nowrap">
+		        <!-- form -->
+		        <form editable-form name="rowform" onbeforesave="saveItem($data, item.id, $index)" ng-show="rowform.$visible" class="form-buttons form-inline" shown="inserted == item">
+		          <button type="submit" ng-disabled="rowform.$waiting" class="btn btn-primary btn-sm">
+		            Save
+		          </button>
+		          <button type="button" ng-disabled="rowform.$waiting" ng-click="rowform.$cancel()" class="btn btn-default btn-sm">
+		            Cancel
+		          </button>
+		        </form>
+		        <div class="buttons" ng-show="!rowform.$visible">
+		          <button class="btn btn-primary btn-sm" ng-click="rowform.$show()">Edit item</button>
+		          <button class="btn btn-danger btn-sm" ng-click="removeItem($index)">Delete item</button>
+		        </div>  
+	      	</td>
+		</tr>
+	</table>
+	<button class="btn btn-default" ng-click="addRow()">Add row</button>
+</section>
