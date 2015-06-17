@@ -45,13 +45,15 @@
 			$localStorage = _$localStorage_;
 			$localStorage.kongurl = _KONGURL_;
 
+
+			$httpBackend.when('GET', 'modules/core/views/home.client.view.html').respond(200, {});
 			// Initialize the Consumers controller.
 			ConsumersController = $controller('ConsumersController', {
 				$scope: scope
 			});
 		}));
 
-		it('$scope.find() should create an array with at least one Consumer object fetched from XHR', inject(function(Consumers) {
+		it('$scope.find() should create an array with at least findOne Consumer object fetched from XHR', inject(function(Consumers) {
 			// Create sample Consumer using the Consumers service
 			var sampleConsumer = new Consumers({
 				username: 'New Consumer',
@@ -113,6 +115,7 @@
 
 			// Set POST response
 			$httpBackend.expectPOST($KONGURL+'/consumers', sampleConsumerPostData).respond(sampleConsumerResponse);
+			$httpBackend.when('GET', 'modules/consumers/views/view-consumer.client.view.html').respond(200, {});
 
 			// Run controller functionality
 			scope.create();
@@ -138,7 +141,7 @@
 
 			// Set PUT response
 			$httpBackend.expectPATCH(/http:\/\/localhost:8000\/kongapi\/consumers\/([0-9a-fA-F]{24})$/).respond();
-
+			$httpBackend.when('GET', 'modules/consumers/views/view-consumer.client.view.html').respond(200, {});
 			// Run controller functionality
 			scope.update();
 			$httpBackend.flush();

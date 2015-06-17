@@ -20,8 +20,8 @@ module.exports = {
 				'lib/angular-bootstrap/ui-bootstrap-tpls.js',
 				'lib/angular-breadcrumb/release/angular-breadcrumb.js',
 				'lib/angular-xeditable/dist/js/xeditable.js',
-				'lib/ngstorage/ngstorage.js',
-				'lib/ngInfiniteScroll/ng-infinite-scroll.js'
+				'lib/ngstorage/ngStorage.js',
+				'lib/ngInfiniteScroll/build/ng-infinite-scroll.js'
 			]
 		},
 		css: [

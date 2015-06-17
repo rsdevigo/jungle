@@ -54,7 +54,6 @@ angular.module('consumers').controller('ConsumersController', ['$scope', '$state
 
 		// Find a list of Consumers
 		$scope.find = function() {
-			
 			$scope.consumers = Consumers.query($location.search());
 			$scope.scroll= {busy : false};
 		};

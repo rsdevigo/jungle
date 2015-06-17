@@ -44,7 +44,7 @@
 			$KONGURL = _KONGURL_;
 			$localStorage = _$localStorage_;
 			$localStorage.kongurl = _KONGURL_;
-
+			$httpBackend.when('GET', 'modules/core/views/home.client.view.html').respond(200, {});
 			// Initialize the Apis controller.
 			ApisController = $controller('ApisController', {
 				$scope: scope
@@ -128,8 +128,8 @@
 
 			// Set POST response
 			$httpBackend.expectPOST($KONGURL+'/apis', sampleApiPostData).respond(sampleApiResponse);
-
-			// Run controller functionality
+			$httpBackend.when('GET', 'modules/apis/views/view-api.client.view.html').respond(200, {});
+			// Run controller functionality	
 			scope.create();
 			$httpBackend.flush();
 
@@ -156,6 +156,7 @@
 
 			// Set PUT response
 			$httpBackend.expectPATCH(/apis\/([0-9a-fA-F]{24})$/).respond();
+			$httpBackend.when('GET', 'modules/apis/views/view-api.client.view.html').respond(200, {});
 
 			// Run controller functionality
 			scope.update();
