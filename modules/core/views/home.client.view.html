@@ -1,5 +1,45 @@
 <section data-ng-controller="HomeController">
-	{{t}}
+	<div ng-if="!storage.kongurl" class="alert alert-danger" role="alert">
+		Connected to any instance of Kong. <br />
+		Please connect to an instance by entering the address in the form above.
+	</div>
+	<div class="row" ng-if="storage.kongurl">
+		<div class="col-md-12">
+			<div class="panel panel-default panel-info">
+			  <div class="panel-heading">Server info</div>
+			  <div class="panel-body">
+			    <table class="table table-striped">
+			    	<tr>
+			    		<td>Host</td>
+			    		<td>{{storage.kongurl}}</td>
+			    	</tr>
+			    	<tr>
+			    		<td>Hostname</td>
+			    		<td>{{serverInfo.hostname}}</td>
+			    	</tr>
+			    	<tr>
+			    		<td>Kong version</td>
+			    		<td>{{serverInfo.version}}</td>
+			    	</tr>
+			    	<tr>
+			    		<td>Lua version</td>
+			    		<td>{{serverInfo.lua_version}}</td>
+			    	</tr>
+			    	<tr>
+			    		<td>Plugins</td>
+			    		<td>
+			    			<span ng-repeat="plugin in serverInfo.plugins.available_on_server">
+			    				<span class="label label-success" ng-if="serverInfo.plugins.enabled_in_cluster.indexOf(plugin) !== -1" data-toggle="tooltip" data-placement="top" title="Plugin active in a api or consumer" >{{plugin}}</span>
+			    				<span class="label label-default" ng-if="serverInfo.plugins.enabled_in_cluster.indexOf(plugin) === -1">{{plugin}}</span>
+			    			</span>
+							
+			    		</td>
+			    	</tr>
+			    </table>
+			  </div>
+			</div>
+		</div>
+	</div>
 	<div class="jumbotron text-center">
 		<div class="row">
 			<div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-12">
@@ -18,6 +58,7 @@
 			</p>
 		</div>
 	</div>
+
 	<div class="well">
 		<h2>KONG Documentation</h2>
 		<p>

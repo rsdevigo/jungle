@@ -33,7 +33,7 @@
 		// The injector ignores leading and trailing underscores here (i.e. _$httpBackend_).
 		// This allows us to inject a service but then attach it to a variable
 		// with the same name as the service.
-		beforeEach(inject(function($controller, $rootScope, _$location_, _$stateParams_, _$httpBackend_, _KONGURL_) {
+		beforeEach(inject(function($controller, $rootScope, _$location_, _$stateParams_, _$httpBackend_, _KONGURL_, _$localStorage_) {
 			// Set a new global scope
 			scope = $rootScope.$new();
 
@@ -42,6 +42,8 @@
 			$httpBackend = _$httpBackend_;
 			$location = _$location_;
 			$KONGURL = _KONGURL_;
+			$localStorage = _$localStorage_;
+			$localStorage.kongurl = _KONGURL_;
 
 			// Initialize the Apis controller.
 			ApisController = $controller('ApisController', {

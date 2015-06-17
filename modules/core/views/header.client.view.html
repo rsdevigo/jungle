@@ -11,11 +11,9 @@
 	        <button type="submit" class="btn btn-success">Connect</button>
 	    </form>
 	</span>
-	<span ng-if="storage.kongurl">
-		<p class="navbar-text navbar-right">
+		<p ng-if="storage.kongurl" class="navbar-text navbar-right" style="padding-right:10px;">
 			Connected in: {{storage.kongurl}} - <a href="#" ng-click="removeKongUrl()" class="navbar-link">Disconnect</a> 
 		</p>
-	</span>
 	
 </div>
 </nav>
@@ -27,8 +25,9 @@
         	</ul>
           <ul class="nav nav-sidebar" data-ng-repeat="item in menu.items | orderBy: 'position'" ng-switch="item.menuItemType" ui-route="{{item.uiRoute}}" class="{{item.menuItemClass}}" ng-class="{active: ($uiRoute)}" dropdown="item.menuItemType === 'dropdown'">
           	<li role="presentation" class="disabled"><a href="#">{{item.title}}</a></li>
-			<li data-ng-repeat="subitem in item.items | orderBy: 'position'" ui-route="{{subitem.uiRoute}}" ng-class="{active: $uiRoute}">
-				<a href="/#!/{{subitem.link}}" data-ng-bind="subitem.title"></a>
+			<li class="ng-class: {active: $uiRoute, disabled: !storage.kongurl}" data-ng-repeat="subitem in item.items | orderBy: 'position'" ui-route="{{subitem.uiRoute}}">
+				<a ng-if="storage.kongurl" href="/#!/{{subitem.link}}" data-ng-bind="subitem.title"></a>
+				<a ng-if="!storage.kongurl" href="#" data-ng-bind="subitem.title"></a>
 			</li>
           </ul>
         </div>

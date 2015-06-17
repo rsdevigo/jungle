@@ -20,7 +20,9 @@ angular.module('core').controller('HeaderController', ['$scope', '$location', '$
 			$http.get(this.url).success(function(data, status){
 				if (status === 200) {
 					$localStorage.kongurl = url;
-					$location.path('/');
+					setTimeout(function () {
+				        $window.location.reload();
+				    }, 1000);
 				}
 			}).
 			error(function(data, status){
@@ -31,7 +33,9 @@ angular.module('core').controller('HeaderController', ['$scope', '$location', '$
 
 		$scope.removeKongUrl = function() {
 			delete $localStorage.kongurl;
-			$state.go($state.current, {}, {reload: true});
+			setTimeout(function () {
+		        $window.location.reload();
+		    }, 1000);
 		};
 	}
 ]);
