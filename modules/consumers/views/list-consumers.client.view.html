@@ -9,6 +9,7 @@
             <th>Custom ID</th>
             <th>Action</th>
         </tr>
+        <div ng-if="consumers.$resolved" infinite-scroll='nextPage()' infinite-scroll-disabled='scroll.busy' infinite-scroll-distance='1'>
         <tr data-ng-repeat="consumer in consumers.data"> 
             <td>
                 {{consumer.id}}
@@ -40,6 +41,7 @@
                 </div>  
             </td>
         </tr>
+        </div>
     </table>
     <div class="alert alert-warning text-center" data-ng-hide="!consumers.$resolved || consumers.data.length">
     	No Consumers yet, why don't you <a href="/#!/consumers/create">create one</a>?

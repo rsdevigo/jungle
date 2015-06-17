@@ -1,8 +1,8 @@
 'use strict';
 
 // Consumers controller
-angular.module('consumers').controller('ConsumersController', ['$scope', '$stateParams', '$location', '$filter', '$http', 'Consumers', 'PLUGINSAVAILABLE', 'PluginsConfigurations', 'Apis', 'Plugins', '$localStorage',
-	function($scope, $stateParams, $location, $filter, $http, Consumers, PLUGINSAVAILABLE, PluginsConfigurations, Apis, Plugins, $localStorage) {
+angular.module('consumers').controller('ConsumersController', ['$scope', '$stateParams', '$location', '$state', '$filter', '$http', 'Consumers', 'PLUGINSAVAILABLE', 'PluginsConfigurations', 'Apis', 'Plugins', '$localStorage',
+	function($scope, $stateParams, $location, $state, $filter, $http, Consumers, PLUGINSAVAILABLE, PluginsConfigurations, Apis, Plugins, $localStorage) {
 
 		// Create new Consumer
 		$scope.create = function() {
@@ -56,6 +56,7 @@ angular.module('consumers').controller('ConsumersController', ['$scope', '$state
 		$scope.find = function() {
 			
 			$scope.consumers = Consumers.query($location.search());
+			$scope.scroll= {busy : false};
 		};
 
 		// Find existing Consumer
@@ -107,7 +108,7 @@ angular.module('consumers').controller('ConsumersController', ['$scope', '$state
 				});
 				plugin.$save(function(response) {
 					$scope.initPluginForm();
-					$location.path('consumers/' + response.consumer_id + '/plugins');
+					$state.go($state.current, {}, {reload: true});
 				}, function(errorResponse) {
 					$scope.error = errorResponse.data;
 				});
@@ -200,6 +201,28 @@ angular.module('consumers').controller('ConsumersController', ['$scope', '$state
 				success(function(data, status){
 					$scope.items.data.splice(index, 1);
 				});
+		};
+
+		$scope.nextPage = function() {
+			if ($scope.scroll.busy){
+				$scope.scroll.busy = false;
+				return;
+			} 
+
+			$scope.scroll.busy = true;
+
+
+			if (undefined === $scope.consumers.next){
+				$scope.scroll.busy = false;
+				return;
+			}
+
+			var offset = new URI($scope.consumers.next).search(true).offset;
+			Consumers.query({offset: offset}, function(consumers){
+				$scope.consumers.next = consumers.next;
+				$scope.consumers.data = $scope.consumers.data.concat(consumers.data);
+				$scope.scroll.busy = false;
+			});
 		};
 	}
 ]);

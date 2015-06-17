@@ -19,7 +19,7 @@
 					<tr>
 						<td>Api name</td>
 						<td ng-repeat="api in apis.data | filter:{id: plugin.api_id}">
-							{{api.name}}
+							<a href="/#!/apis/{{plugin.api_id}}">{{api.name}}</a>
 						</td>
 					</tr>
 					<tr ng-repeat="(key, value) in plugin.value">

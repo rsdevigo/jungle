@@ -1,8 +1,8 @@
 'use strict';
 
 // Apis controller
-angular.module('apis').controller('ApisController', ['$scope', '$stateParams', '$location', 'Apis', 'Plugins', 'PLUGINSAVAILABLE',
-	function($scope, $stateParams, $location, Apis, Plugins, PLUGINSAVAILABLE) {
+angular.module('apis').controller('ApisController', ['$scope', '$stateParams', '$location', '$state', 'Apis', 'Plugins', 'PLUGINSAVAILABLE',
+	function($scope, $stateParams, $location, $state, Apis, Plugins, PLUGINSAVAILABLE) {
 
 		// Create new Api
 		$scope.create = function() {
@@ -63,6 +63,7 @@ angular.module('apis').controller('ApisController', ['$scope', '$stateParams', '
 		// Find a list of Apis
 		$scope.find = function() {
 			$scope.apis = Apis.query($location.search());
+			$scope.scroll= {busy : false};
 		};
 
 		// Find existing Api
@@ -109,7 +110,7 @@ angular.module('apis').controller('ApisController', ['$scope', '$stateParams', '
 				});
 				plugin.$save(function(response) {
 					$scope.initPluginForm();
-					$location.path('apis/' + response.api_id + '/plugins');
+					$state.go($state.current, {}, {reload: true});
 				}, function(errorResponse) {
 					$scope.error = errorResponse.data;
 				});
@@ -130,6 +131,27 @@ angular.module('apis').controller('ApisController', ['$scope', '$stateParams', '
 			});
 		};
 
+		$scope.nextPage = function() {
+			if ($scope.scroll.busy){
+				$scope.scroll.busy = false;
+				return;
+			} 
+
+			$scope.scroll.busy = true;
+
+
+			if (undefined === $scope.apis.next){
+				$scope.scroll.busy = false;
+				return;
+			}
+
+			var offset = new URI($scope.apis.next).search(true).offset;
+			Apis.query({offset: offset}, function(apis){
+				$scope.apis.next = apis.next;
+				$scope.apis.data = $scope.apis.data.concat(apis.data);
+				$scope.scroll.busy = false;
+			});
+		};
 
 	}
 ]);

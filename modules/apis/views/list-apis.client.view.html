@@ -16,52 +16,54 @@
           <th>Strip Path</th>
           <th>Action</th>
         </tr>
-        <tr data-ng-repeat="api in apis.data">
-          <td>
-            {{api.id}}
-          </td>
-          <td>
-            <span editable-text="api.name" e-name="name" e-form="rowform">
-              {{api.name}}
-            </span>
-          </td>
-          <td>
-            <span editable-text="api.public_dns" e-name="public_dns" e-form="rowform">
-              {{api.public_dns}}
-            </span>
-          </td>
-          <td>
-            <span editable-text="api.path" e-name="path" e-form="rowform">
-              {{api.path}}
-            </span>
-          </td>
-          <td>
-            <span editable-text="api.target_url" e-name="target_url" e-form="rowform">
-              {{api.target_url}}
-            </span>
-          </td>
-          <td>
-            <span editable-checkbox="api.strip_path" e-title="Strip Path" e-name="strip_path" e-form="rowform">
-              {{ api.strip_path && "ON" || "OFF" }}
-            </span>
-          </td>
-          <td>
-            <form editable-form name="rowform" onbeforesave="saveApi($data, api.id)" ng-show="rowform.$visible" class="form-buttons form-inline" shown="inserted == api">
-              <button type="submit" ng-disabled="rowform.$waiting" class="btn btn-primary btn-sm">
-                Save
-              </button>
-              <button type="button" ng-disabled="rowform.$waiting" ng-click="rowform.$cancel()" class="btn btn-default btn-sm">
-                Cancel
-              </button>
-            </form>
-            <div class="buttons" ng-show="!rowform.$visible">
-              <button class="btn btn-primary btn-xs" ng-click="rowform.$show()"><i class="glyphicon glyphicon-edit"></i> Edit API Details </button>
-              <a class="btn btn-success btn-xs" href="/#!/apis/{{api.id}}">
-                <i class="glyphicon glyphicon-eye-open"></i> View API Details
-              </a>
-            </div>  
-          </td>
-        </tr>
+          <div ng-if="apis.$resolved" infinite-scroll='nextPage()' infinite-scroll-disabled='scroll.busy' infinite-scroll-distance='1'>
+            <tr data-ng-repeat="api in apis.data">
+              <td>
+                {{api.id}}
+              </td>
+              <td>
+                <span editable-text="api.name" e-name="name" e-form="rowform">
+                  {{api.name}}
+                </span>
+              </td>
+              <td>
+                <span editable-text="api.public_dns" e-name="public_dns" e-form="rowform">
+                  {{api.public_dns}}
+                </span>
+              </td>
+              <td>
+                <span editable-text="api.path" e-name="path" e-form="rowform">
+                  {{api.path}}
+                </span>
+              </td>
+              <td>
+                <span editable-text="api.target_url" e-name="target_url" e-form="rowform">
+                  {{api.target_url}}
+                </span>
+              </td>
+              <td>
+                <span editable-checkbox="api.strip_path" e-title="Strip Path" e-name="strip_path" e-form="rowform">
+                  {{ api.strip_path && "ON" || "OFF" }}
+                </span>
+              </td>
+              <td>
+                <form editable-form name="rowform" onbeforesave="saveApi($data, api.id)" ng-show="rowform.$visible" class="form-buttons form-inline" shown="inserted == api">
+                  <button type="submit" ng-disabled="rowform.$waiting" class="btn btn-primary btn-sm">
+                    Save
+                  </button>
+                  <button type="button" ng-disabled="rowform.$waiting" ng-click="rowform.$cancel()" class="btn btn-default btn-sm">
+                    Cancel
+                  </button>
+                </form>
+                <div class="buttons" ng-show="!rowform.$visible">
+                  <button class="btn btn-primary btn-xs" ng-click="rowform.$show()"><i class="glyphicon glyphicon-edit"></i> Edit API Details </button>
+                  <a class="btn btn-success btn-xs" href="/#!/apis/{{api.id}}">
+                    <i class="glyphicon glyphicon-eye-open"></i> View API Details
+                  </a>
+                </div>  
+              </td>
+            </tr>
+          </div>
       </table>
     <div class="alert alert-warning text-center" data-ng-hide="!apis.$resolved || apis.data.length">
     	No Apis yet, why don't you <a href="/#!/apis/create">create one</a>?
