@@ -19,7 +19,7 @@
 </nav>
 <div class="container-fluid" data-ng-controller="HeaderController">
       <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar">
+        <div ng-hide="!storage.kongurl" class="col-sm-3 col-md-2 sidebar">
         	<ul class="nav nav-sidebar">
         		<li ui-route="/" ng-class="{active: $uiRoute}"><a href="/#!/">Home</a></li>
         	</ul>

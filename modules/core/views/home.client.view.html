@@ -29,8 +29,10 @@
 			    		<td>Plugins</td>
 			    		<td>
 			    			<span ng-repeat="plugin in serverInfo.plugins.available_on_server">
-			    				<span class="label label-success" ng-if="serverInfo.plugins.enabled_in_cluster.indexOf(plugin) !== -1" data-toggle="tooltip" data-placement="top" title="Plugin active in a api or consumer" >{{plugin}}</span>
-			    				<span class="label label-default" ng-if="serverInfo.plugins.enabled_in_cluster.indexOf(plugin) === -1">{{plugin}}</span>
+		    					<span ng-repeat="p in pluginsAvailable | filter : {name : plugin}">
+		    						<a href="{{p.docUrl}}" class="label label-success" ng-if="serverInfo.plugins.enabled_in_cluster.indexOf(plugin) !== -1" tooltip="Plugin active in some API" tooltip-placement="bottom">{{plugin}}</a>
+		    						<a class="label label-default" ng-if="serverInfo.plugins.enabled_in_cluster.indexOf(plugin) === -1" href="{{p.docUrl}}">{{plugin}}</a>
+		    					</span>
 			    			</span>
 							
 			    		</td>
