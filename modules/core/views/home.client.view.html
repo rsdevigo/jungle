@@ -1,6 +1,6 @@
 <section data-ng-controller="HomeController">
 	<div ng-if="!storage.kongurl" class="alert alert-danger" role="alert">
-		Connected to any instance of Kong. <br />
+		Not connected to any Kong's instance. <br />
 		Please connect to an instance by entering the address in the form above.
 	</div>
 	<div class="row" ng-if="storage.kongurl">
@@ -65,7 +65,7 @@
 		<h2>KONG Documentation</h2>
 		<p>
 			<ul>
-				<li><a target="_blank" href="http://getkong.org/docs">KONG Documentation</a>
+				<li><a target="_blank" href="http://getkong.org/docs/{{serverInfo.version}}">KONG Documentation</a>
 				</li>
 				<li><a target="_blank" href="http://getkong.org/plugins">KONG PLugins</a>
 				</li>
