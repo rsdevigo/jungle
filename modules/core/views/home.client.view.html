@@ -3,6 +3,20 @@
 		Not connected to any Kong's instance. <br />
 		Please connect to an instance by entering the address in the form above.
 	</div>
+	<div class="row" ng-if="!storage.kongurl">
+		<div class="col-md-12">
+			<div class="panel panel-default panel-warning">
+			  <div class="panel-heading">How to connect your KONG instance</div>
+			  <div class="panel-body">
+			    <ol>
+			    	<li>Add your Kong Admin API in the your Kong apis list</li>
+			    	<li></li>
+			    	<li>First add your Kong Admin API in the Kong</li>
+			    </ol>
+			  </div>
+			</div>
+		</div>
+	</div>
 	<div class="row" ng-if="storage.kongurl">
 		<div class="col-md-12">
 			<div class="panel panel-default panel-info">
@@ -30,8 +44,8 @@
 			    		<td>
 			    			<span ng-repeat="plugin in serverInfo.plugins.available_on_server">
 		    					<span ng-repeat="p in pluginsAvailable | filter : {name : plugin}">
-		    						<a href="{{p.docUrl}}" class="label label-success" ng-if="serverInfo.plugins.enabled_in_cluster.indexOf(plugin) !== -1" tooltip="Plugin active in some API" tooltip-placement="bottom">{{plugin}}</a>
-		    						<a class="label label-default" ng-if="serverInfo.plugins.enabled_in_cluster.indexOf(plugin) === -1" href="{{p.docUrl}}">{{plugin}}</a>
+		    						<a href="{{p.docUrl}}" class="label label-success" ng-if="(isArray(serverInfo.plugins.enabled_in_cluster) && serverInfo.plugins.enabled_in_cluster.indexOf(plugin) !== -1)" tooltip="Plugin active in some API" tooltip-placement="bottom">{{plugin}}</a>
+		    						<a class="label label-default" ng-if="!isArray(serverInfo.plugins.enabled_in_cluster) || serverInfo.plugins.enabled_in_cluster.indexOf(plugin) === -1" href="{{p.docUrl}}">{{plugin}}</a>
 		    					</span>
 			    			</span>
 							
