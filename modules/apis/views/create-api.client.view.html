@@ -12,28 +12,28 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label" for="public_dns">Public DNS</label>
+                    <label class="control-label" for="request_host">Request Host</label>
                     <div class="controls">
-                        <input type="text" data-ng-model="public_dns" id="public_dns" class="form-control" placeholder="Public DNS" required>
+                        <input type="text" data-ng-model="request_host" id="request_host" class="form-control" placeholder="Request Host" required>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label" for="path">Path</label>
+                    <label class="control-label" for="request_path">Request Path</label>
                     <div class="controls">
-                        <input type="text" data-ng-model="path" id="path" class="form-control" placeholder="Path" required>
+                        <input type="text" data-ng-model="request_path" id="request_path" class="form-control" placeholder="Path" required>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label" for="target_url ">Target url</label>
+                    <label class="control-label" for="upstream_url ">Upstream url</label>
                     <div class="controls">
-                        <input type="text" data-ng-model="target_url " id="target_url " class="form-control" placeholder="Target url" required>
+                        <input type="text" data-ng-model="upstream_url " id="upstream_url " class="form-control" placeholder="Upstream url" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="checkbox">
                       <label>
-                        <input type="checkbox" ng-model="strip_path" value="">
-                        Strip Path
+                        <input type="checkbox" ng-model="strip_request_path" value="">
+                        Strip Request Path
                       </label>
                     </div>
                 </div>

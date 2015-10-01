@@ -10,10 +10,10 @@
         <tr>
           <th>ID</th>
           <th>Name</th>
-          <th>Public DNS</th>
-          <th>Path</th>
-          <th>Target Url</th>
-          <th>Strip Path</th>
+          <th>Request Host</th>
+          <th>Request Path</th>
+          <th>Upstream Url</th>
+          <th>Strip Request Path</th>
           <th>Action</th>
         </tr>
           <div ng-if="apis.$resolved" infinite-scroll='nextPage()' infinite-scroll-disabled='scroll.busy' infinite-scroll-distance='1'>
@@ -27,23 +27,23 @@
                 </span>
               </td>
               <td>
-                <span editable-text="api.public_dns" e-name="public_dns" e-form="rowform">
-                  {{api.public_dns}}
+                <span editable-text="api.request_host" e-name="request_host" e-form="rowform">
+                  {{api.request_host}}
                 </span>
               </td>
               <td>
-                <span editable-text="api.path" e-name="path" e-form="rowform">
-                  {{api.path}}
+                <span editable-text="api.request_path" e-name="request_path" e-form="rowform">
+                  {{api.request_path}}
                 </span>
               </td>
               <td>
-                <span editable-text="api.target_url" e-name="target_url" e-form="rowform">
-                  {{api.target_url}}
+                <span editable-text="api.upstream_url" e-name="upstream_url" e-form="rowform">
+                  {{api.upstream_url}}
                 </span>
               </td>
               <td>
-                <span editable-checkbox="api.strip_path" e-title="Strip Path" e-name="strip_path" e-form="rowform">
-                  {{ api.strip_path && "ON" || "OFF" }}
+                <span editable-checkbox="api.strip_request_path" e-title="Strip Path" e-name="strip_request_path" e-form="rowform">
+                  {{ api.strip_request_path && "ON" || "OFF" }}
                 </span>
               </td>
               <td>

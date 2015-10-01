@@ -9,10 +9,10 @@ angular.module('apis').controller('ApisController', ['$scope', '$stateParams', '
 			// Create new Api object
 			var api = new Apis ({
 				name: this.name,
-				public_dns: this.public_dns,
-				path: this.path,
-				strip_path: true,
-				target_url : this.target_url
+				request_host: this.request_host,
+				request_path: this.request_path,
+				strip_request_path: true,
+				upstream_url : this.upstream_url
 			});
 
 			// Redirect after save
@@ -21,10 +21,10 @@ angular.module('apis').controller('ApisController', ['$scope', '$stateParams', '
 
 				// Clear form fields
 				$scope.name = '';
-				$scope.public_dns = '';
-				$scope.path = '';
-				$scope.strip_path = '';
-				$scope.target_url = '';
+				$scope.request_host = '';
+				$scope.request_path = '';
+				$scope.strip_request_path = '';
+				$scope.upstream_url = '';
 			}, function(errorResponse) {
 				$scope.error = errorResponse.data;
 			});

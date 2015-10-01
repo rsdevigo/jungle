@@ -55,10 +55,10 @@
 			// Create sample Api using the Apis service
 			var sampleApi = new Apis({
 				name: 'New Api',
-				public_dns: 'api',
+				request_host: 'api',
 				path: '/path',
-				strip_path: true,
-				target_url: 'http://api.com'
+				strip_request_path: true,
+				upstream_url: 'http://api.com'
 			});
 
 			// Create a sample Apis array that includes the new Api
@@ -79,10 +79,10 @@
 			// Define a sample Api object
 			var sampleApi = new Apis({
 				name: 'New Api',
-				public_dns: 'api',
-				path: '/path',
-				strip_path: true,
-				target_url: 'http://api.com'
+				request_host: 'api',
+				request_path: '/path',
+				strip_request_path: true,
+				upstream_url: 'http://api.com'
 			});
 
 			// Set the URL parameter
@@ -103,28 +103,28 @@
 			// Create a sample Api object
 			var sampleApiPostData = new Apis({
 				name: 'New Api',
-				public_dns: 'api',
-				path: '/path',
-				strip_path: true,
-				target_url: 'http://api.com'
+				request_host: 'api',
+				request_path: '/path',
+				strip_request_path: true,
+				upstream_url: 'http://api.com'
 			});
 
 			// Create a sample Api response
 			var sampleApiResponse = new Apis({
 				id: '525cf20451979dea2c000001',
 				name: 'New Api',
-				public_dns: 'api',
-				path: '/path',
-				strip_path: true,
-				target_url: 'http://api.com'
+				request_host: 'api',
+				request_path: '/path',
+				strip_request_path: true,
+				upstream_url: 'http://api.com'
 			});
 
 			// Fixture mock form input values
 			scope.name = 'New Api';
-			scope.public_dns = 'api';
-			scope.path = '/path';
+			scope.request_host = 'api';
+			scope.request_path = '/path';
 			scope.strip_path = true;
-			scope.target_url = 'http://api.com';
+			scope.upstream_url = 'http://api.com';
 
 			// Set POST response
 			$httpBackend.expectPOST($KONGURL+'/apis', sampleApiPostData).respond(sampleApiResponse);
@@ -145,10 +145,10 @@
 			var sampleApiPutData = new Apis({
 				id: '525cf20451979dea2c000001',
 				name: 'New Api',
-				public_dns: 'api',
-				path: '/path',
-				strip_path: true,
-				target_url: 'http://api.com'
+				request_host: 'api',
+				request_path: '/path',
+				strip_request_path: true,
+				upstream_url: 'http://api.com'
 			});
 
 			// Mock Api in scope
