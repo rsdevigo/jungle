@@ -58,6 +58,7 @@
 				request_host: 'api',
 				path: '/path',
 				strip_request_path: true,
+				preserve_host: true,
 				upstream_url: 'http://api.com'
 			});
 
@@ -82,6 +83,7 @@
 				request_host: 'api',
 				request_path: '/path',
 				strip_request_path: true,
+				preserve_host: true,
 				upstream_url: 'http://api.com'
 			});
 
@@ -106,6 +108,7 @@
 				request_host: 'api',
 				request_path: '/path',
 				strip_request_path: true,
+				preserve_host: true,
 				upstream_url: 'http://api.com'
 			});
 
@@ -116,6 +119,7 @@
 				request_host: 'api',
 				request_path: '/path',
 				strip_request_path: true,
+				preserve_host: false,
 				upstream_url: 'http://api.com'
 			});
 

@@ -12,6 +12,7 @@ angular.module('apis').controller('ApisController', ['$scope', '$stateParams', '
 				request_host: this.request_host,
 				request_path: this.request_path,
 				strip_request_path: true,
+				preserve_host: true,
 				upstream_url : this.upstream_url
 			});
 
@@ -24,6 +25,7 @@ angular.module('apis').controller('ApisController', ['$scope', '$stateParams', '
 				$scope.request_host = '';
 				$scope.request_path = '';
 				$scope.strip_request_path = '';
+				$scope.preserve_host = '';
 				$scope.upstream_url = '';
 			}, function(errorResponse) {
 				$scope.error = errorResponse.data;

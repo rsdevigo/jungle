@@ -14,6 +14,7 @@
           <th>Request Path</th>
           <th>Upstream Url</th>
           <th>Strip Request Path</th>
+          <th>Preserve Host</th>
           <th>Action</th>
         </tr>
           <div ng-if="apis.$resolved" infinite-scroll='nextPage()' infinite-scroll-disabled='scroll.busy' infinite-scroll-distance='1'>
@@ -44,6 +45,11 @@
               <td>
                 <span editable-checkbox="api.strip_request_path" e-title="Strip Path" e-name="strip_request_path" e-form="rowform">
                   {{ api.strip_request_path && "ON" || "OFF" }}
+                </span>
+              </td>
+              <td>
+                <span editable-checkbox="api.preserve_host" e-title="Preserve Host" e-name="preserve_host" e-form="rowform">
+                  {{ api.preserve_host && "ON" || "OFF" }}
                 </span>
               </td>
               <td>
