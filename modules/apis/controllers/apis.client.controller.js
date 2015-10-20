@@ -11,8 +11,8 @@ angular.module('apis').controller('ApisController', ['$scope', '$stateParams', '
 				name: this.name,
 				request_host: this.request_host,
 				request_path: this.request_path,
-				strip_request_path: true,
-				preserve_host: true,
+				strip_request_path: this.strip_request_path,
+				preserve_host: this.preserve_host,
 				upstream_url : this.upstream_url
 			});
 
@@ -34,7 +34,7 @@ angular.module('apis').controller('ApisController', ['$scope', '$stateParams', '
 
 		// Remove existing Api
 		$scope.remove = function(api) {
-			if ( api ) { 
+			if ( api ) {
 				api.$remove();
 
 				for (var i in $scope.apis) {
@@ -43,7 +43,7 @@ angular.module('apis').controller('ApisController', ['$scope', '$stateParams', '
 					}
 				}
 			} else {
-				
+
 				$scope.api.$remove(function() {
 					$location.path('apis');
 				}, function(errorResponse) {
@@ -70,7 +70,7 @@ angular.module('apis').controller('ApisController', ['$scope', '$stateParams', '
 
 		// Find existing Api
 		$scope.findOne = function() {
-			$scope.api = Apis.get({ 
+			$scope.api = Apis.get({
 				apiId: $stateParams.apiId
 			});
 		};
@@ -78,9 +78,9 @@ angular.module('apis').controller('ApisController', ['$scope', '$stateParams', '
 		$scope.listPluginByApi = function() {
 			$scope.pluginAvailable = PLUGINSAVAILABLE;
 			$scope.findOne();
-			$scope.plugins = Plugins.query({ 
+			$scope.plugins = Plugins.query({
 				apiId: $stateParams.apiId
-			});	
+			});
 		};
 
 
@@ -91,7 +91,7 @@ angular.module('apis').controller('ApisController', ['$scope', '$stateParams', '
 		};
 
 		$scope.removePlugin = function(plugin) {
-			if ( plugin ) { 
+			if ( plugin ) {
 				var pluginResource = new Plugins(plugin);
 				pluginResource.$remove();
 
@@ -137,7 +137,7 @@ angular.module('apis').controller('ApisController', ['$scope', '$stateParams', '
 			if ($scope.scroll.busy){
 				$scope.scroll.busy = false;
 				return;
-			} 
+			}
 
 			$scope.scroll.busy = true;
 
