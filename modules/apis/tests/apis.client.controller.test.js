@@ -119,7 +119,7 @@
 				request_host: 'api',
 				request_path: '/path',
 				strip_request_path: true,
-				preserve_host: false,
+				preserve_host: true,
 				upstream_url: 'http://api.com'
 			});
 
@@ -127,7 +127,8 @@
 			scope.name = 'New Api';
 			scope.request_host = 'api';
 			scope.request_path = '/path';
-			scope.strip_path = true;
+			scope.strip_request_path = true;
+			scope.preserve_host = true;
 			scope.upstream_url = 'http://api.com';
 
 			// Set POST response
