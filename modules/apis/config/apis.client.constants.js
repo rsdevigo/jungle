@@ -4,27 +4,27 @@
 angular.module('apis').constant('PLUGINSAVAILABLE', [
 	
 	{
-		name: 'httplog',
+		name: 'http-log',
 		label: 'Http Log',
 		docUrl: 'http://getkong.org/plugins/http-log/',
 		schema: [
 			{
-				'name':'http_endpoint',
+				'name':'config.http_endpoint',
 				'type' : 'string',
 				'label': 'Http endpoint'
 			},
 			{
-				'name':'timeout',
+				'name':'config.timeout',
 				'type' : 'integer',
 				'label': 'Timeout'
 			},
 			{
-				'name':'keepalive',
+				'name':'config.keepalive',
 				'type' : 'integer',
 				'label': 'Keepalive'
 			},
 			{
-				'name':'method',
+				'name':'config.method',
 				'type' : 'enum',
 				'label': 'Method',
 				'values': [
@@ -36,73 +36,73 @@ angular.module('apis').constant('PLUGINSAVAILABLE', [
 		]
 	},
 	{
-		name: 'udplog',
+		name: 'udp-log',
 		label: 'UDP Log',
 		docUrl: 'http://getkong.org/plugins/udp-log/',
 		schema: [
 			{
-				'name':'host',
+				'name':'config.host',
 				'type' : 'string',
 				'label': 'Host'
 			},
 			{
-				'name':'timeout',
+				'name':'config.timeout',
 				'type' : 'integer',
 				'label': 'Timeout'
 			},
 			{
-				'name':'port',
+				'name':'config.port',
 				'type' : 'integer',
 				'label': 'Port'
 			}
 		]
 	},
 	{
-		name: 'tcplog',
+		name: 'tcp-log',
 		label: 'TCP Log',
 		docUrl: 'http://getkong.org/plugins/tcp-log/',
 		schema: [
 			{
-				'name':'host',
+				'name':'config.host',
 				'type' : 'string',
 				'label': 'Host'
 			},
 			{
-				'name':'timeout',
+				'name':'config.timeout',
 				'type' : 'integer',
 				'label': 'Timeout'
 			},
 			{
-				'name':'port',
+				'name':'config.port',
 				'type' : 'integer',
 				'label': 'Port'
 			},
 			{
-				'name':'keepalive',
+				'name':'config.keepalive',
 				'type' : 'integer',
 				'label': 'Keepalive'
 			}
 		]
 	},
 	{
-		name: 'filelog',
+		name: 'file-log',
 		label: 'File Log',
 		docUrl: 'http://getkong.org/plugins/file-log/',
 		schema: [
 			{
-				'name':'path',
+				'name':'config.path',
 				'type' : 'string',
 				'label': 'The output path file'
 			}
 		]
 	},
 	{
-		name: 'basicauth',
+		name: 'basic-auth',
 		label: 'Basic Authentication',
 		docUrl: 'http://getkong.org/plugins/basic-authentication/',
 		schema: [
 			{
-				'name':'hide_credentials',
+				'name':'config.hide_credentials',
 				'type' : 'boolean',
 				'label': 'Hide Credentials'
 			}
@@ -111,31 +111,31 @@ angular.module('apis').constant('PLUGINSAVAILABLE', [
 			routes : [
 				{
 					'action': 'list',
-					'route': 'consumers/:username/basicauth',
+					'route': 'consumers/:username/basic-auth',
 					'method': 'GET',
 					'params': ['username']
 				},
 				{
 					'action': 'create',
-					'route': 'consumers/:username/basicauth',
+					'route': 'consumers/:username/basic-auth',
 					'method': 'POST',
 					'params': ['username']
 				},
 				{
 					'action': 'view',
-					'route': 'consumers/:username/basicauth/:id',
+					'route': 'consumers/:username/basic-auth/:id',
 					'method': 'GET',
 					'params': ['username', 'id']
 				},
 				{
 					'action': 'update',
-					'route': 'consumers/:username/basicauth/:id',
+					'route': 'consumers/:username/basic-auth/:id',
 					'method': 'PATCH',
 					'params': ['username', 'id']
 				},
 				{
 					'action': 'delete',
-					'route': 'consumers/:username/basicauth/:id',
+					'route': 'consumers/:username/basic-auth/:id',
 					'method': 'DELETE',
 					'params': ['username', 'id']
 				}
@@ -156,17 +156,17 @@ angular.module('apis').constant('PLUGINSAVAILABLE', [
 		
 	},
 	{
-		name: 'keyauth',
+		name: 'key-auth',
 		label: 'Key Authentication',
 		docUrl: 'http://getkong.org/plugins/key-authentication/',
 		schema: [
 			{
-				'name':'hide_credentials',
+				'name':'config.hide_credentials',
 				'type' : 'boolean',
 				'label': 'Hide Credentials'
 			},
 			{
-				'name':'key_names',
+				'name':'config.key_names',
 				'type' : 'string',
 				'label': 'Key Names'
 			}
@@ -176,31 +176,31 @@ angular.module('apis').constant('PLUGINSAVAILABLE', [
 				routes : [
 					{
 						'action': 'list',
-						'route': 'consumers/:username/keyauth',
+						'route': 'consumers/:username/key-auth',
 						'method': 'GET',
 						'params': ['username']
 					},
 					{
 						'action': 'create',
-						'route': 'consumers/:username/keyauth',
+						'route': 'consumers/:username/key-auth',
 						'method': 'POST',
 						'params': ['username']
 					},
 					{
 						'action': 'view',
-						'route': 'consumers/:username/keyauth/:id',
+						'route': 'consumers/:username/key-auth/:id',
 						'method': 'GET',
 						'params': ['username', 'id']
 					},
 					{
 						'action': 'update',
-						'route': 'consumers/:username/keyauth/:id',
+						'route': 'consumers/:username/key-auth/:id',
 						'method': 'PATCH',
 						'params': ['username', 'id']
 					},
 					{
 						'action': 'delete',
-						'route': 'consumers/:username/keyauth/:id',
+						'route': 'consumers/:username/key-auth/:id',
 						'method': 'DELETE',
 						'params': ['username', 'id']
 					}
@@ -221,32 +221,32 @@ angular.module('apis').constant('PLUGINSAVAILABLE', [
 		docUrl: 'http://getkong.org/plugins/cors/',
 		schema: [
 			{
-				'name':'origin',
+				'name':'config.origin',
 				'type' : 'string',
 				'label': 'Origin'
 			},
 			{
-				'name':'methods',
+				'name':'config.methods',
 				'type' : 'string',
 				'label': 'Method'
 			},
 			{
-				'name':'headers',
+				'name':'config.headers',
 				'type' : 'string',
 				'label': 'Headers'
 			},
 			{
-				'name':'exposed_headers',
+				'name':'config.exposed_headers',
 				'type' : 'string',
 				'label': 'Exposed Headers'
 			},
 			{
-				'name':'credentials',
+				'name':'config.credentials',
 				'type' : 'boolean',
 				'label': 'Credentials'
 			},
 			{
-				'name':'max_age',
+				'name':'config.max_age',
 				'type' : 'integer',
 				'label': 'Max age'
 			}
@@ -258,81 +258,81 @@ angular.module('apis').constant('PLUGINSAVAILABLE', [
 		docUrl: 'http://getkong.org/plugins/ssl/',
 		schema: [
 			{
-				'name':'cert',
+				'name':'config.cert',
 				'type' : 'string',
 				'label': 'Certificate file path'
 			},
 			{
-				'name':'key',
+				'name':'config.key',
 				'type' : 'string',
 				'label': 'Certificate key path'
 			},
 			{
-				'name':'only_hhtps',
+				'name':'config.only_https',
 				'type' : 'boolean',
 				'label': 'Only HTTPS'
 			}
 		]
 	},
 	{
-		name: 'request_transformer',
+		name: 'request-transformer',
 		label: 'Request Transformer',
 		docUrl: 'http://getkong.org/plugins/request-transformer/',
 		schema: [
 			{
-				'name':'add.headers',
+				'name':'config.add.headers',
 				'type' : 'string',
 				'label': 'Headers to add'
 			},
 			{
-				'name':'add.querystring',
+				'name':'config.add.querystring',
 				'type' : 'string',
 				'label': 'Parameters to add in request querystring'
 			},
 			{
-				'name':'add.form',
+				'name':'config.add.form',
 				'type' : 'string',
 				'label': 'Values to add in request body'
 			},
 			{
-				'name':'remove.headers',
+				'name':'config.remove.headers',
 				'type' : 'string',
 				'label': 'Headers to remove'
 			},
 			{
-				'name':'remove.querystring',
+				'name':'config.remove.querystring',
 				'type' : 'string',
 				'label': 'Parameters to remove in request querystring'
 			},
 			{
-				'name':'remove.form',
+				'name':'config.remove.form',
 				'type' : 'string',
 				'label': 'Values to remove in request body'
 			}
 		]
 	},
 	{
-		name: 'response_transformer',
+		name: 'response-transformer',
 		label: 'Response Transformer',
 		docUrl: 'http://getkong.org/plugins/response-transformer/',
 		schema: [
 			{
-				'name':'add.headers',
+				'name':'config.add.headers',
 				'type' : 'string',
 				'label': 'Headers to add'
 			},
 			{
-				'name':'add.json',
+				'name':'config.add.json',
 				'type' : 'string',
 				'label': 'Values to add to a JSON response body'
 			},
 			{
-				'name':'remove.headers',
+				'name':'config.remove.headers',
 				'type' : 'string',
 				'label': 'Headers to remove'
 			},
 			{
-				'name':'remove.json',
+				'name':'config.remove.json',
 				'type' : 'string',
 				'label': 'Values to remove to a JSON response body'
 			}
@@ -364,12 +364,12 @@ angular.module('apis').constant('PLUGINSAVAILABLE', [
 		]
 	},
 	{
-		name: 'requestsizelimiting',
+		name: 'request-size-limiting',
 		label: 'Request Size Limiting',
 		docUrl: 'http://getkong.org/plugins/request-size-limiting/',
 		schema: [
 			{
-				'name':'allowed_payload_size',
+				'name':'config.allowed_payload_size',
 				'type' : 'integer',
 				'label': 'Allowed request payload size in megabytes'
 			}
