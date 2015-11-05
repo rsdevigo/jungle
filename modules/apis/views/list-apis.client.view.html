@@ -39,8 +39,16 @@
                 <span ng-show="sortType == 'upstream_url' && !sortReverse" class="fa fa-arrow-down"></span>
                 <span ng-show="sortType == 'upstream_url' && sortReverse" class="fa fa-arrow-up"></span>
             </th>
-            <th>Strip Request Path</th>
-            <th>Preserve Host</th>
+            <th ng-click="sortType = 'strip_request_path'; sortReverse = !sortReverse" class="sortable">
+                Strip Request Path
+                <span ng-show="sortType == 'strip_request_path' && !sortReverse" class="fa fa-arrow-down"></span>
+                <span ng-show="sortType == 'strip_request_path' && sortReverse" class="fa fa-arrow-up"></span>
+            </th>
+            <th ng-click="sortType = 'preserve_host'; sortReverse = !sortReverse" class="sortable">
+                Preserve Host
+                <span ng-show="sortType == 'preserve_host' && !sortReverse" class="fa fa-arrow-down"></span>
+                <span ng-show="sortType == 'preserve_host' && sortReverse" class="fa fa-arrow-up"></span>
+            </th>
             <th>Action</th>
         </tr>
           <div ng-if="apis.$resolved" infinite-scroll='nextPage()' infinite-scroll-disabled='scroll.busy' infinite-scroll-distance='1'>
