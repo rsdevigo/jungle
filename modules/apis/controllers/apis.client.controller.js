@@ -154,5 +154,8 @@ angular.module('apis').controller('ApisController', ['$scope', '$stateParams', '
 			});
 		};
 
+		// Set sorting default configuration
+		$scope.sortType = 'name';
+		$scope.sortReverse = false;
 	}
 ]);

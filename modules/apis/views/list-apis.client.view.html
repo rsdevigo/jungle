@@ -6,19 +6,45 @@
     <div class="page-header">
         <h1>Apis</h1>
     </div>
-     <table class="table table-striped table-bordered">
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-search"></i></div>
+            <input type="text" class="form-control" placeholder="Filter Apis" ng-model="searchFilter">
+        </div>
+    </div>
+    <table class="table table-striped table-bordered">
         <tr>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Request Host</th>
-          <th>Request Path</th>
-          <th>Upstream Url</th>
-          <th>Strip Request Path</th>
-          <th>Preserve Host</th>
-          <th>Action</th>
+            <th ng-click="sortType = 'id'; sortReverse = !sortReverse" class="sortable">
+                ID
+                <span ng-show="sortType == 'id' && !sortReverse" class="fa fa-arrow-down"></span>
+                <span ng-show="sortType == 'id' && sortReverse" class="fa fa-arrow-up"></span>
+            </th>
+            <th ng-click="sortType = 'name'; sortReverse = !sortReverse" class="sortable">
+                Name
+                <span ng-show="sortType == 'name' && !sortReverse" class="fa fa-arrow-down"></span>
+                <span ng-show="sortType == 'name' && sortReverse" class="fa fa-arrow-up"></span>
+            </th>
+            <th ng-click="sortType = 'request_host'; sortReverse = !sortReverse" class="sortable">
+                Request Host
+                <span ng-show="sortType == 'request_host' && !sortReverse" class="fa fa-arrow-down"></span>
+                <span ng-show="sortType == 'request_host' && sortReverse" class="fa fa-arrow-up"></span>
+            </th>
+            <th ng-click="sortType = 'request_path'; sortReverse = !sortReverse" class="sortable">
+                Request Path
+                <span ng-show="sortType == 'request_path' && !sortReverse" class="fa fa-arrow-down"></span>
+                <span ng-show="sortType == 'request_path' && sortReverse" class="fa fa-arrow-up"></span>
+            </th>
+            <th ng-click="sortType = 'upstream_url'; sortReverse = !sortReverse" class="sortable">
+                Upstream Url
+                <span ng-show="sortType == 'upstream_url' && !sortReverse" class="fa fa-arrow-down"></span>
+                <span ng-show="sortType == 'upstream_url' && sortReverse" class="fa fa-arrow-up"></span>
+            </th>
+            <th>Strip Request Path</th>
+            <th>Preserve Host</th>
+            <th>Action</th>
         </tr>
           <div ng-if="apis.$resolved" infinite-scroll='nextPage()' infinite-scroll-disabled='scroll.busy' infinite-scroll-distance='1'>
-            <tr data-ng-repeat="api in apis.data">
+            <tr data-ng-repeat="api in apis.data | orderBy:sortType:sortReverse | filter:searchFilter">
               <td>
                 {{api.id}}
               </td>
