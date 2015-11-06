@@ -30,4 +30,4 @@ RUN cat modules/core/config/core.client.constants.js
 
 # Expose ports: server (3000), livereload (35729)
 EXPOSE 3000 35729
-CMD ["grunt serve"]
+CMD ["grunt", "serve"]
