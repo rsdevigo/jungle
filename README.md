@@ -32,7 +32,7 @@ Running `grunt test` will run the unit tests with karma.
 
 ## Gitter chat & Community
 
-[gitter.im/rsdevigo/jungle](https://gitter.im/rsdevigo/jungle)
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/rsdevigo/jungle?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 ## Roadmap for version 0.0.1
 
