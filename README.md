@@ -1,4 +1,6 @@
 # JUNGLE
+
+[![Join the chat at https://gitter.im/rsdevigo/jungle](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/rsdevigo/jungle?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Build Status](https://travis-ci.org/rsdevigo/jungle.svg?branch=master)](https://travis-ci.org/rsdevigo/jungle)
 
 ![](https://i.imgur.com/MuFFweF.png)
