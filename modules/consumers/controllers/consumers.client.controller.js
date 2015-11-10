@@ -223,5 +223,9 @@ angular.module('consumers').controller('ConsumersController', ['$scope', '$state
 				$scope.scroll.busy = false;
 			});
 		};
+
+		// Set sorting default configuration
+		$scope.sortType = 'username';
+		$scope.sortReverse = false;
 	}
 ]);

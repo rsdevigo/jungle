@@ -103,3 +103,15 @@ body {
   display: inline-block;
   border-radius: 50%;
 }
+
+
+/*
+ * Table
+ */
+
+th.sortable {
+    cursor: pointer;
+}
+.table-2-column th, .table-2-column td {
+  width: 50%;
+}
