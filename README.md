@@ -32,6 +32,10 @@ In ./modules/core/config/core.client.constants.js change the KONGURL.
 
 Running `grunt test` will run the unit tests with karma.
 
+## Gitter chat & Community
+
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/rsdevigo/jungle?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+
 ## Roadmap for version 0.0.1
 
 - Error treatment for messages from server. 
