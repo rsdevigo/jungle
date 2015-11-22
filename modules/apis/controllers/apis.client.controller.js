@@ -103,11 +103,11 @@ angular.module('apis').controller('ApisController', ['$scope', '$stateParams', '
 			}
 		};
 
-		$scope.createPlugin = function() {			
+		$scope.createPlugin = function() {
 			if ($scope.currentPlugin !== null) {
 				var opt = $scope.value;
-				opt["name"]   = $scope.currentPlugin.name;
-				opt["api_id"] = $stateParams.apiId;
+				opt.name   = $scope.currentPlugin.name;
+				opt.api_id = $stateParams.apiId;
 				var plugin = new Plugins(opt);
 				plugin.$save(function(response) {
 					$scope.initPluginForm();

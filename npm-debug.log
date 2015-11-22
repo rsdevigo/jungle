@@ -1,0 +1,971 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '-g',
+1 verbose cli   'generator-angular',
+1 verbose cli   'generator-chrome-extension',
+1 verbose cli   'generator-gulp-angular',
+1 verbose cli   'generator-gulp-webapp',
+1 verbose cli   'generator-karma',
+1 verbose cli   'generator-kraken',
+1 verbose cli   'generator-mocha' ]
+2 info using npm@2.14.2
+3 info using node@v4.0.0
+4 verbose install initial load of /usr/local/lib/package.json
+5 verbose readDependencies loading dependencies from /usr/local/lib/package.json
+6 silly cache add args [ 'generator-angular', null ]
+7 verbose cache add spec generator-angular
+8 silly cache add args [ 'generator-chrome-extension', null ]
+9 verbose cache add spec generator-chrome-extension
+10 silly cache add args [ 'generator-gulp-angular', null ]
+11 verbose cache add spec generator-gulp-angular
+12 silly cache add args [ 'generator-gulp-webapp', null ]
+13 verbose cache add spec generator-gulp-webapp
+14 silly cache add args [ 'generator-karma', null ]
+15 verbose cache add spec generator-karma
+16 silly cache add args [ 'generator-kraken', null ]
+17 verbose cache add spec generator-kraken
+18 silly cache add args [ 'generator-mocha', null ]
+19 verbose cache add spec generator-mocha
+20 silly cache add parsed spec Result {
+20 silly cache add   raw: 'generator-angular',
+20 silly cache add   scope: null,
+20 silly cache add   name: 'generator-angular',
+20 silly cache add   rawSpec: '',
+20 silly cache add   spec: '*',
+20 silly cache add   type: 'range' }
+21 silly addNamed generator-angular@*
+22 verbose addNamed "*" is a valid semver range for generator-angular
+23 silly addNameRange { name: 'generator-angular', range: '*', hasData: false }
+24 silly mapToRegistry name generator-angular
+25 silly mapToRegistry using default registry
+26 silly mapToRegistry registry https://registry.npmjs.org/
+27 silly mapToRegistry uri https://registry.npmjs.org/generator-angular
+28 verbose addNameRange registry:https://registry.npmjs.org/generator-angular not in flight; fetching
+29 silly cache add parsed spec Result {
+29 silly cache add   raw: 'generator-chrome-extension',
+29 silly cache add   scope: null,
+29 silly cache add   name: 'generator-chrome-extension',
+29 silly cache add   rawSpec: '',
+29 silly cache add   spec: '*',
+29 silly cache add   type: 'range' }
+30 silly addNamed generator-chrome-extension@*
+31 verbose addNamed "*" is a valid semver range for generator-chrome-extension
+32 silly addNameRange { name: 'generator-chrome-extension',
+32 silly addNameRange   range: '*',
+32 silly addNameRange   hasData: false }
+33 silly mapToRegistry name generator-chrome-extension
+34 silly mapToRegistry using default registry
+35 silly mapToRegistry registry https://registry.npmjs.org/
+36 silly mapToRegistry uri https://registry.npmjs.org/generator-chrome-extension
+37 verbose addNameRange registry:https://registry.npmjs.org/generator-chrome-extension not in flight; fetching
+38 silly cache add parsed spec Result {
+38 silly cache add   raw: 'generator-gulp-angular',
+38 silly cache add   scope: null,
+38 silly cache add   name: 'generator-gulp-angular',
+38 silly cache add   rawSpec: '',
+38 silly cache add   spec: '*',
+38 silly cache add   type: 'range' }
+39 silly addNamed generator-gulp-angular@*
+40 verbose addNamed "*" is a valid semver range for generator-gulp-angular
+41 silly addNameRange { name: 'generator-gulp-angular', range: '*', hasData: false }
+42 silly mapToRegistry name generator-gulp-angular
+43 silly mapToRegistry using default registry
+44 silly mapToRegistry registry https://registry.npmjs.org/
+45 silly mapToRegistry uri https://registry.npmjs.org/generator-gulp-angular
+46 verbose addNameRange registry:https://registry.npmjs.org/generator-gulp-angular not in flight; fetching
+47 silly cache add parsed spec Result {
+47 silly cache add   raw: 'generator-gulp-webapp',
+47 silly cache add   scope: null,
+47 silly cache add   name: 'generator-gulp-webapp',
+47 silly cache add   rawSpec: '',
+47 silly cache add   spec: '*',
+47 silly cache add   type: 'range' }
+48 silly addNamed generator-gulp-webapp@*
+49 verbose addNamed "*" is a valid semver range for generator-gulp-webapp
+50 silly addNameRange { name: 'generator-gulp-webapp', range: '*', hasData: false }
+51 silly mapToRegistry name generator-gulp-webapp
+52 silly mapToRegistry using default registry
+53 silly mapToRegistry registry https://registry.npmjs.org/
+54 silly mapToRegistry uri https://registry.npmjs.org/generator-gulp-webapp
+55 verbose addNameRange registry:https://registry.npmjs.org/generator-gulp-webapp not in flight; fetching
+56 silly cache add parsed spec Result {
+56 silly cache add   raw: 'generator-karma',
+56 silly cache add   scope: null,
+56 silly cache add   name: 'generator-karma',
+56 silly cache add   rawSpec: '',
+56 silly cache add   spec: '*',
+56 silly cache add   type: 'range' }
+57 silly addNamed generator-karma@*
+58 verbose addNamed "*" is a valid semver range for generator-karma
+59 silly addNameRange { name: 'generator-karma', range: '*', hasData: false }
+60 silly mapToRegistry name generator-karma
+61 silly mapToRegistry using default registry
+62 silly mapToRegistry registry https://registry.npmjs.org/
+63 silly mapToRegistry uri https://registry.npmjs.org/generator-karma
+64 verbose addNameRange registry:https://registry.npmjs.org/generator-karma not in flight; fetching
+65 silly cache add parsed spec Result {
+65 silly cache add   raw: 'generator-kraken',
+65 silly cache add   scope: null,
+65 silly cache add   name: 'generator-kraken',
+65 silly cache add   rawSpec: '',
+65 silly cache add   spec: '*',
+65 silly cache add   type: 'range' }
+66 silly addNamed generator-kraken@*
+67 verbose addNamed "*" is a valid semver range for generator-kraken
+68 silly addNameRange { name: 'generator-kraken', range: '*', hasData: false }
+69 silly mapToRegistry name generator-kraken
+70 silly mapToRegistry using default registry
+71 silly mapToRegistry registry https://registry.npmjs.org/
+72 silly mapToRegistry uri https://registry.npmjs.org/generator-kraken
+73 verbose addNameRange registry:https://registry.npmjs.org/generator-kraken not in flight; fetching
+74 silly cache add parsed spec Result {
+74 silly cache add   raw: 'generator-mocha',
+74 silly cache add   scope: null,
+74 silly cache add   name: 'generator-mocha',
+74 silly cache add   rawSpec: '',
+74 silly cache add   spec: '*',
+74 silly cache add   type: 'range' }
+75 silly addNamed generator-mocha@*
+76 verbose addNamed "*" is a valid semver range for generator-mocha
+77 silly addNameRange { name: 'generator-mocha', range: '*', hasData: false }
+78 silly mapToRegistry name generator-mocha
+79 silly mapToRegistry using default registry
+80 silly mapToRegistry registry https://registry.npmjs.org/
+81 silly mapToRegistry uri https://registry.npmjs.org/generator-mocha
+82 verbose addNameRange registry:https://registry.npmjs.org/generator-mocha not in flight; fetching
+83 verbose request uri https://registry.npmjs.org/generator-angular
+84 verbose request no auth needed
+85 info attempt registry request try #1 at 10:18:42 AM
+86 verbose request id 8739c75112f5ee22
+87 verbose etag "5425N4YFU77KZXVA9F22EDAA7"
+88 http request GET https://registry.npmjs.org/generator-angular
+89 verbose request uri https://registry.npmjs.org/generator-chrome-extension
+90 verbose request no auth needed
+91 info attempt registry request try #1 at 10:18:42 AM
+92 verbose etag "8N7DOFIDWUY6MAGISXSWSMQ7U"
+93 http request GET https://registry.npmjs.org/generator-chrome-extension
+94 verbose request uri https://registry.npmjs.org/generator-gulp-webapp
+95 verbose request no auth needed
+96 info attempt registry request try #1 at 10:18:42 AM
+97 verbose etag "CJ7NDPNYRE3R08B3GV5R9C4LK"
+98 http request GET https://registry.npmjs.org/generator-gulp-webapp
+99 verbose request uri https://registry.npmjs.org/generator-gulp-angular
+100 verbose request no auth needed
+101 info attempt registry request try #1 at 10:18:42 AM
+102 verbose etag "7CAZU3TXXV3U5H60YKLCL7FQI"
+103 http request GET https://registry.npmjs.org/generator-gulp-angular
+104 verbose request uri https://registry.npmjs.org/generator-kraken
+105 verbose request no auth needed
+106 info attempt registry request try #1 at 10:18:42 AM
+107 verbose etag "4RDOC656RBTFBMHN40ROORW6P"
+108 http request GET https://registry.npmjs.org/generator-kraken
+109 verbose request uri https://registry.npmjs.org/generator-karma
+110 verbose request no auth needed
+111 info attempt registry request try #1 at 10:18:42 AM
+112 verbose etag "5QFC794OWQU2FNVO4PBE8N3P5"
+113 http request GET https://registry.npmjs.org/generator-karma
+114 verbose request uri https://registry.npmjs.org/generator-mocha
+115 verbose request no auth needed
+116 info attempt registry request try #1 at 10:18:42 AM
+117 verbose etag "3A3WLC40ZSO5W8LIFIRPGCIS2"
+118 http request GET https://registry.npmjs.org/generator-mocha
+119 http 304 https://registry.npmjs.org/generator-chrome-extension
+120 silly get cb [ 304,
+120 silly get   { date: 'Wed, 18 Nov 2015 04:48:47 GMT',
+120 silly get     via: '1.1 varnish',
+120 silly get     'cache-control': 'max-age=60',
+120 silly get     etag: '"8N7DOFIDWUY6MAGISXSWSMQ7U"',
+120 silly get     age: '28',
+120 silly get     connection: 'keep-alive',
+120 silly get     'x-served-by': 'cache-sin6927-SIN',
+120 silly get     'x-cache': 'HIT',
+120 silly get     'x-cache-hits': '1',
+120 silly get     'x-timer': 'S1447822127.740553,VS0,VE0',
+120 silly get     vary: 'Accept' } ]
+121 verbose etag https://registry.npmjs.org/generator-chrome-extension from cache
+122 verbose get saving generator-chrome-extension to /Users/arjun/.npm/registry.npmjs.org/generator-chrome-extension/.cache.json
+123 http 304 https://registry.npmjs.org/generator-gulp-webapp
+124 silly get cb [ 304,
+124 silly get   { date: 'Wed, 18 Nov 2015 04:48:47 GMT',
+124 silly get     via: '1.1 varnish',
+124 silly get     'cache-control': 'max-age=60',
+124 silly get     etag: '"CJ7NDPNYRE3R08B3GV5R9C4LK"',
+124 silly get     age: '27',
+124 silly get     connection: 'keep-alive',
+124 silly get     'x-served-by': 'cache-sin6920-SIN',
+124 silly get     'x-cache': 'HIT',
+124 silly get     'x-cache-hits': '1',
+124 silly get     'x-timer': 'S1447822127.750968,VS0,VE0',
+124 silly get     vary: 'Accept' } ]
+125 verbose etag https://registry.npmjs.org/generator-gulp-webapp from cache
+126 verbose get saving generator-gulp-webapp to /Users/arjun/.npm/registry.npmjs.org/generator-gulp-webapp/.cache.json
+127 http 304 https://registry.npmjs.org/generator-karma
+128 silly get cb [ 304,
+128 silly get   { date: 'Wed, 18 Nov 2015 04:48:47 GMT',
+128 silly get     via: '1.1 varnish',
+128 silly get     'cache-control': 'max-age=60',
+128 silly get     etag: '"5QFC794OWQU2FNVO4PBE8N3P5"',
+128 silly get     age: '28',
+128 silly get     connection: 'keep-alive',
+128 silly get     'x-served-by': 'cache-sin6920-SIN',
+128 silly get     'x-cache': 'HIT',
+128 silly get     'x-cache-hits': '1',
+128 silly get     'x-timer': 'S1447822127.750773,VS0,VE0',
+128 silly get     vary: 'Accept' } ]
+129 verbose etag https://registry.npmjs.org/generator-karma from cache
+130 verbose get saving generator-karma to /Users/arjun/.npm/registry.npmjs.org/generator-karma/.cache.json
+131 silly addNameRange number 2 { name: 'generator-chrome-extension', range: '*', hasData: true }
+132 silly addNameRange versions [ 'generator-chrome-extension',
+132 silly addNameRange   [ '0.1.0',
+132 silly addNameRange     '0.1.1',
+132 silly addNameRange     '0.2.0',
+132 silly addNameRange     '0.2.1',
+132 silly addNameRange     '0.2.2',
+132 silly addNameRange     '0.2.3',
+132 silly addNameRange     '0.2.4',
+132 silly addNameRange     '0.2.5',
+132 silly addNameRange     '0.2.6',
+132 silly addNameRange     '0.2.7',
+132 silly addNameRange     '0.2.8',
+132 silly addNameRange     '0.2.9',
+132 silly addNameRange     '0.2.10',
+132 silly addNameRange     '0.2.11',
+132 silly addNameRange     '0.3.0',
+132 silly addNameRange     '0.3.1',
+132 silly addNameRange     '0.4.0',
+132 silly addNameRange     '0.4.1',
+132 silly addNameRange     '0.4.2',
+132 silly addNameRange     '0.4.4' ] ]
+133 silly addNamed generator-chrome-extension@0.4.4
+134 verbose addNamed "0.4.4" is a plain semver version for generator-chrome-extension
+135 silly cache afterAdd generator-chrome-extension@0.4.4
+136 verbose afterAdd /Users/arjun/.npm/generator-chrome-extension/0.4.4/package/package.json not in flight; writing
+137 silly addNameRange number 2 { name: 'generator-gulp-webapp', range: '*', hasData: true }
+138 silly addNameRange versions [ 'generator-gulp-webapp',
+138 silly addNameRange   [ '0.0.1',
+138 silly addNameRange     '0.0.3',
+138 silly addNameRange     '0.0.4',
+138 silly addNameRange     '0.0.5',
+138 silly addNameRange     '0.0.6',
+138 silly addNameRange     '0.0.7',
+138 silly addNameRange     '0.0.8',
+138 silly addNameRange     '0.1.0',
+138 silly addNameRange     '0.2.0',
+138 silly addNameRange     '0.3.0',
+138 silly addNameRange     '1.0.0',
+138 silly addNameRange     '1.0.1',
+138 silly addNameRange     '1.0.2',
+138 silly addNameRange     '1.0.3' ] ]
+139 silly addNamed generator-gulp-webapp@1.0.3
+140 verbose addNamed "1.0.3" is a plain semver version for generator-gulp-webapp
+141 silly addNameRange number 2 { name: 'generator-karma', range: '*', hasData: true }
+142 silly addNameRange versions [ 'generator-karma',
+142 silly addNameRange   [ '0.1.1',
+142 silly addNameRange     '0.2.0',
+142 silly addNameRange     '0.3.0',
+142 silly addNameRange     '0.3.1',
+142 silly addNameRange     '0.4.1',
+142 silly addNameRange     '0.5.0',
+142 silly addNameRange     '0.6.0',
+142 silly addNameRange     '0.7.0',
+142 silly addNameRange     '0.8.0',
+142 silly addNameRange     '0.8.1',
+142 silly addNameRange     '0.8.2',
+142 silly addNameRange     '0.8.3',
+142 silly addNameRange     '0.9.0',
+142 silly addNameRange     '1.0.0' ] ]
+143 silly addNamed generator-karma@1.0.0
+144 verbose addNamed "1.0.0" is a plain semver version for generator-karma
+145 silly cache afterAdd generator-gulp-webapp@1.0.3
+146 verbose afterAdd /Users/arjun/.npm/generator-gulp-webapp/1.0.3/package/package.json not in flight; writing
+147 silly cache afterAdd generator-karma@1.0.0
+148 verbose afterAdd /Users/arjun/.npm/generator-karma/1.0.0/package/package.json not in flight; writing
+149 verbose afterAdd /Users/arjun/.npm/generator-chrome-extension/0.4.4/package/package.json written
+150 verbose afterAdd /Users/arjun/.npm/generator-gulp-webapp/1.0.3/package/package.json written
+151 verbose afterAdd /Users/arjun/.npm/generator-karma/1.0.0/package/package.json written
+152 http 304 https://registry.npmjs.org/generator-gulp-angular
+153 silly get cb [ 304,
+153 silly get   { date: 'Wed, 18 Nov 2015 04:48:47 GMT',
+153 silly get     via: '1.1 varnish',
+153 silly get     'cache-control': 'max-age=60',
+153 silly get     etag: '"7CAZU3TXXV3U5H60YKLCL7FQI"',
+153 silly get     age: '28',
+153 silly get     connection: 'keep-alive',
+153 silly get     'x-served-by': 'cache-sin6921-SIN',
+153 silly get     'x-cache': 'HIT',
+153 silly get     'x-cache-hits': '1',
+153 silly get     'x-timer': 'S1447822127.847692,VS0,VE0',
+153 silly get     vary: 'Accept' } ]
+154 verbose etag https://registry.npmjs.org/generator-gulp-angular from cache
+155 verbose get saving generator-gulp-angular to /Users/arjun/.npm/registry.npmjs.org/generator-gulp-angular/.cache.json
+156 silly addNameRange number 2 { name: 'generator-gulp-angular', range: '*', hasData: true }
+157 silly addNameRange versions [ 'generator-gulp-angular',
+157 silly addNameRange   [ '0.0.1',
+157 silly addNameRange     '0.1.1',
+157 silly addNameRange     '0.2.0',
+157 silly addNameRange     '0.2.1',
+157 silly addNameRange     '0.3.0',
+157 silly addNameRange     '0.3.1',
+157 silly addNameRange     '0.4.0',
+157 silly addNameRange     '0.4.1',
+157 silly addNameRange     '0.5.0',
+157 silly addNameRange     '0.5.1',
+157 silly addNameRange     '0.6.0',
+157 silly addNameRange     '0.6.1',
+157 silly addNameRange     '0.6.2',
+157 silly addNameRange     '0.7.0',
+157 silly addNameRange     '0.7.1',
+157 silly addNameRange     '0.7.2',
+157 silly addNameRange     '0.7.3',
+157 silly addNameRange     '0.8.0',
+157 silly addNameRange     '0.8.1',
+157 silly addNameRange     '0.9.0',
+157 silly addNameRange     '0.9.1',
+157 silly addNameRange     '0.10.0',
+157 silly addNameRange     '0.11.0',
+157 silly addNameRange     '0.12.0',
+157 silly addNameRange     '0.12.1',
+157 silly addNameRange     '1.0.0-rc1',
+157 silly addNameRange     '1.0.0-rc2',
+157 silly addNameRange     '1.0.0' ] ]
+158 silly addNamed generator-gulp-angular@1.0.0
+159 verbose addNamed "1.0.0" is a plain semver version for generator-gulp-angular
+160 http 304 https://registry.npmjs.org/generator-mocha
+161 silly get cb [ 304,
+161 silly get   { date: 'Wed, 18 Nov 2015 04:48:47 GMT',
+161 silly get     via: '1.1 varnish',
+161 silly get     'cache-control': 'max-age=60',
+161 silly get     etag: '"3A3WLC40ZSO5W8LIFIRPGCIS2"',
+161 silly get     age: '28',
+161 silly get     connection: 'keep-alive',
+161 silly get     'x-served-by': 'cache-sin6920-SIN',
+161 silly get     'x-cache': 'HIT',
+161 silly get     'x-cache-hits': '1',
+161 silly get     'x-timer': 'S1447822127.863355,VS0,VE0',
+161 silly get     vary: 'Accept' } ]
+162 verbose etag https://registry.npmjs.org/generator-mocha from cache
+163 verbose get saving generator-mocha to /Users/arjun/.npm/registry.npmjs.org/generator-mocha/.cache.json
+164 silly cache afterAdd generator-gulp-angular@1.0.0
+165 verbose afterAdd /Users/arjun/.npm/generator-gulp-angular/1.0.0/package/package.json not in flight; writing
+166 verbose afterAdd /Users/arjun/.npm/generator-gulp-angular/1.0.0/package/package.json written
+167 silly addNameRange number 2 { name: 'generator-mocha', range: '*', hasData: true }
+168 silly addNameRange versions [ 'generator-mocha',
+168 silly addNameRange   [ '0.1.0',
+168 silly addNameRange     '0.1.1',
+168 silly addNameRange     '0.1.2',
+168 silly addNameRange     '0.1.3',
+168 silly addNameRange     '0.1.4',
+168 silly addNameRange     '0.1.5',
+168 silly addNameRange     '0.1.6',
+168 silly addNameRange     '0.1.7',
+168 silly addNameRange     '0.1.8',
+168 silly addNameRange     '0.2.0' ] ]
+169 silly addNamed generator-mocha@0.2.0
+170 verbose addNamed "0.2.0" is a plain semver version for generator-mocha
+171 silly cache afterAdd generator-mocha@0.2.0
+172 verbose afterAdd /Users/arjun/.npm/generator-mocha/0.2.0/package/package.json not in flight; writing
+173 verbose afterAdd /Users/arjun/.npm/generator-mocha/0.2.0/package/package.json written
+174 http 304 https://registry.npmjs.org/generator-angular
+175 silly get cb [ 304,
+175 silly get   { date: 'Wed, 18 Nov 2015 04:48:47 GMT',
+175 silly get     via: '1.1 varnish',
+175 silly get     'cache-control': 'max-age=60',
+175 silly get     etag: '"5425N4YFU77KZXVA9F22EDAA7"',
+175 silly get     age: '28',
+175 silly get     connection: 'keep-alive',
+175 silly get     'x-served-by': 'cache-sin6927-SIN',
+175 silly get     'x-cache': 'HIT',
+175 silly get     'x-cache-hits': '1',
+175 silly get     'x-timer': 'S1447822127.978672,VS0,VE0',
+175 silly get     vary: 'Accept' } ]
+176 verbose etag https://registry.npmjs.org/generator-angular from cache
+177 verbose get saving generator-angular to /Users/arjun/.npm/registry.npmjs.org/generator-angular/.cache.json
+178 silly addNameRange number 2 { name: 'generator-angular', range: '*', hasData: true }
+179 silly addNameRange versions [ 'generator-angular',
+179 silly addNameRange   [ '0.1.0',
+179 silly addNameRange     '0.1.1',
+179 silly addNameRange     '0.1.2',
+179 silly addNameRange     '0.1.3',
+179 silly addNameRange     '0.1.4',
+179 silly addNameRange     '0.1.5',
+179 silly addNameRange     '0.2.0',
+179 silly addNameRange     '0.2.1',
+179 silly addNameRange     '0.2.2',
+179 silly addNameRange     '0.3.0',
+179 silly addNameRange     '0.3.1',
+179 silly addNameRange     '0.4.0',
+179 silly addNameRange     '0.5.0',
+179 silly addNameRange     '0.5.1',
+179 silly addNameRange     '0.6.0-rc.1',
+179 silly addNameRange     '0.6.0-rc.2',
+179 silly addNameRange     '0.6.0',
+179 silly addNameRange     '0.7.0',
+179 silly addNameRange     '0.7.1',
+179 silly addNameRange     '0.8.0',
+179 silly addNameRange     '0.9.0-0',
+179 silly addNameRange     '0.9.0-1',
+179 silly addNameRange     '0.9.0',
+179 silly addNameRange     '0.9.1',
+179 silly addNameRange     '0.9.2',
+179 silly addNameRange     '0.9.3',
+179 silly addNameRange     '0.9.5',
+179 silly addNameRange     '0.9.6',
+179 silly addNameRange     '0.9.7',
+179 silly addNameRange     '0.9.8',
+179 silly addNameRange     '0.10.0',
+179 silly addNameRange     '0.11.0',
+179 silly addNameRange     '0.11.1',
+179 silly addNameRange     '0.12.0',
+179 silly addNameRange     '0.11.2',
+179 silly addNameRange     '0.12.1',
+179 silly addNameRange     '0.13.0',
+179 silly addNameRange     '0.13.1',
+179 silly addNameRange     '0.13.2',
+179 silly addNameRange     '0.13.3',
+179 silly addNameRange     '0.13.4',
+179 silly addNameRange     '0.14.0' ] ]
+180 silly addNamed generator-angular@0.14.0
+181 verbose addNamed "0.14.0" is a plain semver version for generator-angular
+182 silly cache afterAdd generator-angular@0.14.0
+183 verbose afterAdd /Users/arjun/.npm/generator-angular/0.14.0/package/package.json not in flight; writing
+184 http 304 https://registry.npmjs.org/generator-kraken
+185 silly get cb [ 304,
+185 silly get   { date: 'Wed, 18 Nov 2015 04:48:47 GMT',
+185 silly get     via: '1.1 varnish',
+185 silly get     'cache-control': 'max-age=60',
+185 silly get     etag: '"4RDOC656RBTFBMHN40ROORW6P"',
+185 silly get     age: '27',
+185 silly get     connection: 'keep-alive',
+185 silly get     'x-served-by': 'cache-sin6923-SIN',
+185 silly get     'x-cache': 'HIT',
+185 silly get     'x-cache-hits': '1',
+185 silly get     'x-timer': 'S1447822127.994301,VS0,VE0',
+185 silly get     vary: 'Accept' } ]
+186 verbose etag https://registry.npmjs.org/generator-kraken from cache
+187 verbose get saving generator-kraken to /Users/arjun/.npm/registry.npmjs.org/generator-kraken/.cache.json
+188 verbose afterAdd /Users/arjun/.npm/generator-angular/0.14.0/package/package.json written
+189 silly addNameRange number 2 { name: 'generator-kraken', range: '*', hasData: true }
+190 silly addNameRange versions [ 'generator-kraken',
+190 silly addNameRange   [ '0.0.0',
+190 silly addNameRange     '0.0.1',
+190 silly addNameRange     '0.0.2',
+190 silly addNameRange     '0.0.3',
+190 silly addNameRange     '0.7.0',
+190 silly addNameRange     '1.0.0-beta',
+190 silly addNameRange     '0.7.1',
+190 silly addNameRange     '0.7.2',
+190 silly addNameRange     '1.0.0-beta.2',
+190 silly addNameRange     '1.0.0-beta.3',
+190 silly addNameRange     '1.0.0-rc.1',
+190 silly addNameRange     '1.0.0-rc.2',
+190 silly addNameRange     '1.0.0-rc.3',
+190 silly addNameRange     '1.0.0',
+190 silly addNameRange     '1.1.0',
+190 silly addNameRange     '1.1.1',
+190 silly addNameRange     '1.1.2',
+190 silly addNameRange     '2.0.0',
+190 silly addNameRange     '2.0.1',
+190 silly addNameRange     '2.1.0',
+190 silly addNameRange     '2.1.1' ] ]
+191 silly addNamed generator-kraken@2.1.1
+192 verbose addNamed "2.1.1" is a plain semver version for generator-kraken
+193 silly cache afterAdd generator-kraken@2.1.1
+194 verbose afterAdd /Users/arjun/.npm/generator-kraken/2.1.1/package/package.json not in flight; writing
+195 verbose afterAdd /Users/arjun/.npm/generator-kraken/2.1.1/package/package.json written
+196 silly install resolved [ { name: 'generator-chrome-extension',
+196 silly install resolved     version: '0.4.4',
+196 silly install resolved     description: 'Scaffold out a Chrome extension',
+196 silly install resolved     keywords: [ 'yeoman-generator', 'chrome', 'extension', 'addon' ],
+196 silly install resolved     author: { name: 'Yeoman' },
+196 silly install resolved     main: 'app/index.js',
+196 silly install resolved     repository:
+196 silly install resolved      { type: 'git',
+196 silly install resolved        url: 'git+https://github.com/yeoman/generator-chrome-extension.git' },
+196 silly install resolved     scripts: { test: 'mocha --reporter spec' },
+196 silly install resolved     dependencies:
+196 silly install resolved      { 'chrome-manifest': '^0.2.6',
+196 silly install resolved        'generator-jasmine': '^0.2.1',
+196 silly install resolved        'generator-mocha': '^0.2.0',
+196 silly install resolved        headerize: '^0.1.1',
+196 silly install resolved        mkdirp: '^0.5.1',
+196 silly install resolved        'underscore.string': '^3.2.1',
+196 silly install resolved        'yeoman-generator': '^0.21.1' },
+196 silly install resolved     devDependencies:
+196 silly install resolved      { mocha: '*',
+196 silly install resolved        'object-assign': '^4.0.1',
+196 silly install resolved        'yeoman-assert': '^2.1.0' },
+196 silly install resolved     engines: { node: '>=0.10.0' },
+196 silly install resolved     license: 'BSD',
+196 silly install resolved     files: [ 'app' ],
+196 silly install resolved     gitHead: '29ec652274a4d6e0386ac49861491765f071d20b',
+196 silly install resolved     bugs: { url: 'https://github.com/yeoman/generator-chrome-extension/issues' },
+196 silly install resolved     homepage: 'https://github.com/yeoman/generator-chrome-extension#readme',
+196 silly install resolved     _id: 'generator-chrome-extension@0.4.4',
+196 silly install resolved     _shasum: '1ecf5e3f2117b0f00d8faa23f11b3b6613af1c21',
+196 silly install resolved     _from: 'generator-chrome-extension@*',
+196 silly install resolved     _npmVersion: '2.11.3',
+196 silly install resolved     _nodeVersion: '0.12.7',
+196 silly install resolved     _npmUser: { name: 'ragingwind', email: 'ragingwind@gmail.com' },
+196 silly install resolved     dist:
+196 silly install resolved      { shasum: '1ecf5e3f2117b0f00d8faa23f11b3b6613af1c21',
+196 silly install resolved        tarball: 'http://registry.npmjs.org/generator-chrome-extension/-/generator-chrome-extension-0.4.4.tgz' },
+196 silly install resolved     maintainers:
+196 silly install resolved      [ [Object],
+196 silly install resolved        [Object],
+196 silly install resolved        [Object],
+196 silly install resolved        [Object],
+196 silly install resolved        [Object],
+196 silly install resolved        [Object],
+196 silly install resolved        [Object],
+196 silly install resolved        [Object],
+196 silly install resolved        [Object] ],
+196 silly install resolved     directories: {},
+196 silly install resolved     _resolved: 'https://registry.npmjs.org/generator-chrome-extension/-/generator-chrome-extension-0.4.4.tgz',
+196 silly install resolved     readme: 'ERROR: No README data found!' },
+196 silly install resolved   { name: 'generator-gulp-webapp',
+196 silly install resolved     version: '1.0.3',
+196 silly install resolved     description: 'Scaffold out a front-end web app',
+196 silly install resolved     license: 'BSD',
+196 silly install resolved     repository:
+196 silly install resolved      { type: 'git',
+196 silly install resolved        url: 'https://github.com/yeoman/generator-gulp-webapp' },
+196 silly install resolved     author: { name: 'The Yeoman Team' },
+196 silly install resolved     main: 'app/index.js',
+196 silly install resolved     engines: { node: '>=0.10.0', npm: '>=1.3' },
+196 silly install resolved     scripts: { test: 'mocha --reporter spec' },
+196 silly install resolved     files: [ 'app' ],
+196 silly install resolved     keywords:
+196 silly install resolved      [ 'yeoman-generator',
+196 silly install resolved        'web',
+196 silly install resolved        'app',
+196 silly install resolved        'front-end',
+196 silly install resolved        'h5bp',
+196 silly install resolved        'modernizr',
+196 silly install resolved        'jquery',
+196 silly install resolved        'gulp' ],
+196 silly install resolved     dependencies:
+196 silly install resolved      { chalk: '^1.0.0',
+196 silly install resolved        'generator-jasmine': '^0.2.1',
+196 silly install resolved        'generator-mocha': '^0.2.0',
+196 silly install resolved        mkdirp: '^0.5.1',
+196 silly install resolved        'underscore.string': '^3.1.1',
+196 silly install resolved        wiredep: '^2.2.2',
+196 silly install resolved        'yeoman-assert': '^2.0.0',
+196 silly install resolved        'yeoman-generator': '^0.20.1',
+196 silly install resolved        yosay: '^1.0.0' },
+196 silly install resolved     devDependencies: { mocha: '*' },
+196 silly install resolved     readme: '# Web app generator [![Build Status](https://secure.travis-ci.org/yeoman/generator-gulp-webapp.svg?branch=master)](http://travis-ci.org/yeoman/generator-gulp-webapp)\n\n> [Yeoman](http://yeoman.io) generator that scaffolds out a front-end web app using [gulp](http://gulpjs.com/) for the build process\n\n![](screenshot.png)\n\n\n## Features\n\nPlease see our [gulpfile](app/templates/gulpfile.babel.js) for up to date information on what we support.\n\n* CSS Autoprefixing\n* Built-in preview server with BrowserSync\n* Automagically compile Sass with [libsass](http://libsass.org)\n* Automagically lint your scripts\n* Map compiled CSS to source stylesheets with source maps\n* Awesome image optimization\n* Automagically wire-up dependencies installed with [Bower](http://bower.io)\n* The gulpfile makes use of [ES2015 features](https://babeljs.io/docs/learn-es2015/) by using [Babel](https://babeljs.io)\n\n*For more information on what this generator can do for you, take a look at the [gulp plugins](app/templates/_package.json) used in our `package.json`.*\n\n\n## libsass\n\nKeep in mind that libsass is feature-wise not fully compatible with Ruby Sass. Check out [this](http://sass-compatibility.github.io) curated list of incompatibilities to find out which features are missing.\n\nIf your favorite feature is missing and you really need Ruby Sass, you can always switch to [gulp-ruby-sass](https://github.com/sindresorhus/gulp-ruby-sass) and update the `styles` task in gulpfile accordingly.\n\n\n## Getting Started\n\n- Install dependencies: `npm install --global yo gulp bower`\n- Install the generator: `npm install --global generator-gulp-webapp`\n- Run `yo gulp-webapp` to scaffold your webapp\n- Run `gulp serve` to preview and watch for changes\n- Run `bower install --save <package>` to install frontend dependencies\n- Run `gulp serve:test` to run the tests in the browser\n- Run `gulp` to build your webapp for production\n- Run `gulp serve:dist` to preview the production build\n\n\n## Docs\n\n* [getting started](docs/README.md) with this generator\n* [recipes](docs/recipes/README.md) for integrating other popular technologies like CoffeeScript\n* [details](docs/bower.md) about our Bower setup\n\n\n## Options\n\n- `--skip-welcome-message`\n  Skips Yeoman\'s greeting before displaying options.\n- `--skip-install-message`\n  Skips the the message displayed after scaffolding has finished and before the dependencies are being installed.\n- `--skip-install`\n  Skips the automatic execution of `bower` and `npm` after scaffolding has finished.\n- `--test-framework=<framework>`\n  Either `mocha` or `jasmine`. Defaults to `mocha`.\n\n\n## Contribute\n\nSee the [contributing docs](contributing.md).\n\n\n## License\n\n[BSD license](http://opensource.org/licenses/bsd-license.php)\n',
+196 silly install resolved     readmeFilename: 'README.md',
+196 silly install resolved     bugs: { url: 'https://github.com/yeoman/generator-gulp-webapp/issues' },
+196 silly install resolved     homepage: 'https://github.com/yeoman/generator-gulp-webapp',
+196 silly install resolved     _id: 'generator-gulp-webapp@1.0.3',
+196 silly install resolved     _from: 'generator-gulp-webapp@*' },
+196 silly install resolved   { name: 'generator-karma',
+196 silly install resolved     version: '1.0.0',
+196 silly install resolved     description: 'Yeoman generator for Karma',
+196 silly install resolved     license: 'BSD',
+196 silly install resolved     main: 'app/index.js',
+196 silly install resolved     repository:
+196 silly install resolved      { type: 'git',
+196 silly install resolved        url: 'https://github.com/yeoman/generator-karma' },
+196 silly install resolved     author: { name: 'The Yeoman Team' },
+196 silly install resolved     engines: { node: '>=0.10.0', npm: '>=1.2.10' },
+196 silly install resolved     scripts: { test: 'mocha --reporter spec' },
+196 silly install resolved     files: [ 'app', 'templates' ],
+196 silly install resolved     keywords: [ 'yeoman-generator', 'scaffold', 'test', 'runner', 'karma' ],
+196 silly install resolved     dependencies:
+196 silly install resolved      { underscore: '^1.6.0',
+196 silly install resolved        'yeoman-generator': '^0.19.1',
+196 silly install resolved        'sorted-object': '~1.0.0' },
+196 silly install resolved     devDependencies: { mocha: '*' },
+196 silly install resolved     peerDependencies: { yo: '>=1.0.0' },
+196 silly install resolved     gitHead: 'cdc0a4a7c0ee3128e0ae5482faabf7cf2c22e4f0',
+196 silly install resolved     bugs: { url: 'https://github.com/yeoman/generator-karma/issues' },
+196 silly install resolved     homepage: 'https://github.com/yeoman/generator-karma',
+196 silly install resolved     _id: 'generator-karma@1.0.0',
+196 silly install resolved     _shasum: '43f909c1677c66598d0acb126694a12d3175f8ad',
+196 silly install resolved     _from: 'generator-karma@*',
+196 silly install resolved     _npmVersion: '2.5.1',
+196 silly install resolved     _nodeVersion: '0.10.32',
+196 silly install resolved     _npmUser: { name: 'sboudrias', email: 'admin@simonboudrias.com' },
+196 silly install resolved     maintainers:
+196 silly install resolved      [ [Object],
+196 silly install resolved        [Object],
+196 silly install resolved        [Object],
+196 silly install resolved        [Object],
+196 silly install resolved        [Object],
+196 silly install resolved        [Object],
+196 silly install resolved        [Object] ],
+196 silly install resolved     dist:
+196 silly install resolved      { shasum: '43f909c1677c66598d0acb126694a12d3175f8ad',
+196 silly install resolved        tarball: 'http://registry.npmjs.org/generator-karma/-/generator-karma-1.0.0.tgz' },
+196 silly install resolved     directories: {},
+196 silly install resolved     _resolved: 'https://registry.npmjs.org/generator-karma/-/generator-karma-1.0.0.tgz',
+196 silly install resolved     readme: 'ERROR: No README data found!' },
+196 silly install resolved   { name: 'generator-gulp-angular',
+196 silly install resolved     version: '1.0.0',
+196 silly install resolved     preferGlobal: true,
+196 silly install resolved     description: 'Yeoman generator for AngularJS with Gulp',
+196 silly install resolved     keywords:
+196 silly install resolved      [ 'yeoman-generator',
+196 silly install resolved        'angular',
+196 silly install resolved        'gulp',
+196 silly install resolved        'restangular',
+196 silly install resolved        'ui-router',
+196 silly install resolved        'bootstrap',
+196 silly install resolved        'angular-material',
+196 silly install resolved        'foundation',
+196 silly install resolved        'sass',
+196 silly install resolved        'less',
+196 silly install resolved        'es6',
+196 silly install resolved        'babel',
+196 silly install resolved        'traceur',
+196 silly install resolved        'typescript',
+196 silly install resolved        'coffeescript',
+196 silly install resolved        'jade',
+196 silly install resolved        'haml',
+196 silly install resolved        'webpack',
+196 silly install resolved        'eslint' ],
+196 silly install resolved     license: 'MIT',
+196 silly install resolved     author: { name: 'Matthieu Lux & Mehdy Dara' },
+196 silly install resolved     contributors: [ [Object], [Object] ],
+196 silly install resolved     files: [ 'app' ],
+196 silly install resolved     main: 'app/index.js',
+196 silly install resolved     repository:
+196 silly install resolved      { type: 'git',
+196 silly install resolved        url: 'git+https://github.com/swiip/generator-gulp-angular.git' },
+196 silly install resolved     scripts:
+196 silly install resolved      { pretest: './scripts/prepare-test.sh',
+196 silly install resolved        test: 'istanbul cover _mocha -- test/node test/template && mocha test/inception/test-inception.js -ig protractor --no-insight',
+196 silly install resolved        'update-shrinkwrap': './scripts/update-test-shrinkwrap.sh',
+196 silly install resolved        deploy: './scripts/deploy-boilerplate.sh' },
+196 silly install resolved     dependencies:
+196 silly install resolved      { chalk: '~1.1.1',
+196 silly install resolved        insight: '~0.7.0',
+196 silly install resolved        lodash: '~3.10.1',
+196 silly install resolved        slash: '~1.0.0',
+196 silly install resolved        'underscore.string': '~3.2.2',
+196 silly install resolved        'yeoman-generator': '~0.20.3',
+196 silly install resolved        yosay: '~1.0.5' },
+196 silly install resolved     devDependencies:
+196 silly install resolved      { bluebird: '~2.10.2',
+196 silly install resolved        bower: '~1.5.3',
+196 silly install resolved        chai: '~3.3.0',
+196 silly install resolved        'chai-as-promised': '~5.1.0',
+196 silly install resolved        commander: '~2.8.1',
+196 silly install resolved        'cross-spawn': '~2.0.0',
+196 silly install resolved        ejs: '~2.3.4',
+196 silly install resolved        eslint: '~1.6.0',
+196 silly install resolved        istanbul: '~0.3.22',
+196 silly install resolved        'js-beautify': '~1.5.10',
+196 silly install resolved        mkdirp: '~0.5.1',
+196 silly install resolved        mocha: '~2.3.3',
+196 silly install resolved        'mocha-lcov-reporter': '~1.0.0',
+196 silly install resolved        mz: '~2.0.0',
+196 silly install resolved        'recursive-readdir': '~1.2.1',
+196 silly install resolved        sinon: '~1.17.1',
+196 silly install resolved        'sinon-chai': '~2.8.0',
+196 silly install resolved        wrench: '1.5.8' },
+196 silly install resolved     peerDependencies: { yo: '>=1.0.0' },
+196 silly install resolved     engines: { node: '>=0.10.0' },
+196 silly install resolved     gitHead: '66c31e8f796727fa3ea23b38efcf3abbd12df8f3',
+196 silly install resolved     bugs: { url: 'https://github.com/swiip/generator-gulp-angular/issues' },
+196 silly install resolved     homepage: 'https://github.com/swiip/generator-gulp-angular#readme',
+196 silly install resolved     _id: 'generator-gulp-angular@1.0.0',
+196 silly install resolved     _shasum: '3f52e03e09c25271d563f96bacd9eebc7be69338',
+196 silly install resolved     _from: 'generator-gulp-angular@*',
+196 silly install resolved     _npmVersion: '3.3.3',
+196 silly install resolved     _nodeVersion: '4.1.0',
+196 silly install resolved     _npmUser: { name: 'swiip', email: 'matthieu.lux@gmail.com' },
+196 silly install resolved     maintainers: [ [Object], [Object] ],
+196 silly install resolved     dist:
+196 silly install resolved      { shasum: '3f52e03e09c25271d563f96bacd9eebc7be69338',
+196 silly install resolved        tarball: 'http://registry.npmjs.org/generator-gulp-angular/-/generator-gulp-angular-1.0.0.tgz' },
+196 silly install resolved     directories: {},
+196 silly install resolved     _resolved: 'https://registry.npmjs.org/generator-gulp-angular/-/generator-gulp-angular-1.0.0.tgz',
+196 silly install resolved     readme: 'ERROR: No README data found!' },
+196 silly install resolved   { name: 'generator-mocha',
+196 silly install resolved     version: '0.2.0',
+196 silly install resolved     description: 'Yeoman generator for Mocha',
+196 silly install resolved     license: 'BSD',
+196 silly install resolved     repository:
+196 silly install resolved      { type: 'git',
+196 silly install resolved        url: 'https://github.com/yeoman/generator-mocha' },
+196 silly install resolved     author: { name: 'The Yeoman Team' },
+196 silly install resolved     engines: { node: '>=0.10.0' },
+196 silly install resolved     scripts: { test: 'mocha' },
+196 silly install resolved     files: [ 'generators' ],
+196 silly install resolved     keywords:
+196 silly install resolved      [ 'yeoman-generator',
+196 silly install resolved        'scaffold',
+196 silly install resolved        'unit',
+196 silly install resolved        'test',
+196 silly install resolved        'testing',
+196 silly install resolved        'bdd',
+196 silly install resolved        'tdd',
+196 silly install resolved        'mocha' ],
+196 silly install resolved     dependencies: { 'yeoman-generator': '^0.19.2' },
+196 silly install resolved     devDependencies: { mocha: '*' },
+196 silly install resolved     readme: '# Mocha generator [![Build Status](https://secure.travis-ci.org/yeoman/generator-mocha.svg?branch=master)](http://travis-ci.org/yeoman/generator-mocha)\n\n> Yeoman generator for [Mocha](http://mochajs.org/)\n\n\n## Install\n\n```\n$ npm install --global generator-mocha\n```\n\n\n## Usage\n\n```\n$ yo mocha\n```\n\n\n## Contribute\n\nSee the [contributing docs](https://github.com/yeoman/yeoman/blob/master/contributing.md)\n\n\n## License\n\n[BSD license](http://opensource.org/licenses/bsd-license.php)\n',
+196 silly install resolved     readmeFilename: 'readme.md',
+196 silly install resolved     bugs: { url: 'https://github.com/yeoman/generator-mocha/issues' },
+196 silly install resolved     homepage: 'https://github.com/yeoman/generator-mocha',
+196 silly install resolved     _id: 'generator-mocha@0.2.0',
+196 silly install resolved     _from: 'generator-mocha@*' },
+196 silly install resolved   { name: 'generator-angular',
+196 silly install resolved     version: '0.14.0',
+196 silly install resolved     description: 'Yeoman generator for AngularJS',
+196 silly install resolved     keywords:
+196 silly install resolved      [ 'yeoman-generator',
+196 silly install resolved        'scaffold',
+196 silly install resolved        'framework',
+196 silly install resolved        'component',
+196 silly install resolved        'front-end',
+196 silly install resolved        'app',
+196 silly install resolved        'angular' ],
+196 silly install resolved     author: { name: 'The Yeoman Team' },
+196 silly install resolved     main: 'app/index.js',
+196 silly install resolved     files:
+196 silly install resolved      [ 'app',
+196 silly install resolved        'common',
+196 silly install resolved        'constant',
+196 silly install resolved        'controller',
+196 silly install resolved        'decorator',
+196 silly install resolved        'directive',
+196 silly install resolved        'factory',
+196 silly install resolved        'filter',
+196 silly install resolved        'main',
+196 silly install resolved        'provider',
+196 silly install resolved        'route',
+196 silly install resolved        'service',
+196 silly install resolved        'templates',
+196 silly install resolved        'value',
+196 silly install resolved        'view',
+196 silly install resolved        'script-base.js',
+196 silly install resolved        'util.js' ],
+196 silly install resolved     repository:
+196 silly install resolved      { type: 'git',
+196 silly install resolved        url: 'git+https://github.com/yeoman/generator-angular.git' },
+196 silly install resolved     scripts: { test: 'mocha' },
+196 silly install resolved     dependencies:
+196 silly install resolved      { chalk: '^1.0.0',
+196 silly install resolved        wiredep: '^2.2.0',
+196 silly install resolved        'yeoman-generator': '^0.16.0',
+196 silly install resolved        yosay: '^1.0.2' },
+196 silly install resolved     peerDependencies: { 'generator-karma': '>=0.9.0' },
+196 silly install resolved     devDependencies:
+196 silly install resolved      { grunt: '^0.4.5',
+196 silly install resolved        'grunt-bump': '^0.6.0',
+196 silly install resolved        'grunt-contrib-jshint': '^0.11.0',
+196 silly install resolved        'grunt-conventional-github-releaser': '^0.5.0',
+196 silly install resolved        'load-grunt-tasks': '^3.1.0',
+196 silly install resolved        mocha: '*',
+196 silly install resolved        'underscore.string': '^3.0.3' },
+196 silly install resolved     engines: { node: '>=0.10.0' },
+196 silly install resolved     license: 'BSD-2-Clause',
+196 silly install resolved     gitHead: 'eea08897e8f7192cd3882f1e948bbf55e107bdcd',
+196 silly install resolved     bugs: { url: 'https://github.com/yeoman/generator-angular/issues' },
+196 silly install resolved     homepage: 'https://github.com/yeoman/generator-angular#readme',
+196 silly install resolved     _id: 'generator-angular@0.14.0',
+196 silly install resolved     _shasum: 'a5d91dacff08894623f80e16dd0e5df99fe56734',
+196 silly install resolved     _from: 'generator-angular@*',
+196 silly install resolved     _npmVersion: '3.3.4',
+196 silly install resolved     _nodeVersion: '4.1.1',
+196 silly install resolved     _npmUser: { name: 'eddiemonge', email: 'eddie+npm@eddiemonge.com' },
+196 silly install resolved     maintainers:
+196 silly install resolved      [ [Object],
+196 silly install resolved        [Object],
+196 silly install resolved        [Object],
+196 silly install resolved        [Object],
+196 silly install resolved        [Object],
+196 silly install resolved        [Object],
+196 silly install resolved        [Object],
+196 silly install resolved        [Object] ],
+196 silly install resolved     dist:
+196 silly install resolved      { shasum: 'a5d91dacff08894623f80e16dd0e5df99fe56734',
+196 silly install resolved        tarball: 'http://registry.npmjs.org/generator-angular/-/generator-angular-0.14.0.tgz' },
+196 silly install resolved     directories: {},
+196 silly install resolved     _resolved: 'https://registry.npmjs.org/generator-angular/-/generator-angular-0.14.0.tgz',
+196 silly install resolved     readme: 'ERROR: No README data found!' },
+196 silly install resolved   { name: 'generator-kraken',
+196 silly install resolved     version: '2.1.1',
+196 silly install resolved     description: 'A kraken generator for Yeoman',
+196 silly install resolved     keywords: [ 'yeoman-generator', 'yeoman', 'kraken', 'kraken.js' ],
+196 silly install resolved     homepage: 'https://github.com/krakenjs/generator-kraken',
+196 silly install resolved     bugs: { url: 'https://github.com/krakenjs/generator-kraken/issues' },
+196 silly install resolved     author:
+196 silly install resolved      { name: 'Jeff Harrell',
+196 silly install resolved        email: 'jeff@juxtadesign.com',
+196 silly install resolved        url: 'https://github.com/jeffharrell' },
+196 silly install resolved     main: 'app/index.js',
+196 silly install resolved     repository:
+196 silly install resolved      { type: 'git',
+196 silly install resolved        url: 'git://github.com/krakenjs/generator-kraken.git' },
+196 silly install resolved     scripts:
+196 silly install resolved      { test: 'mocha',
+196 silly install resolved        coverage: 'istanbul cover _mocha -- test/*.js' },
+196 silly install resolved     dependencies:
+196 silly install resolved      { chalk: '^1.0.0',
+196 silly install resolved        debuglog: '^1.0.1',
+196 silly install resolved        mkdirp: '^0.5.1',
+196 silly install resolved        'underscore.string': '^3.1.1',
+196 silly install resolved        'update-notifier': '^0.3.1',
+196 silly install resolved        'yeoman-generator': '^0.20.1' },
+196 silly install resolved     devDependencies:
+196 silly install resolved      { grunt: '^0.4.5',
+196 silly install resolved        istanbul: '^0.3.7',
+196 silly install resolved        mocha: '^2.2.1',
+196 silly install resolved        resolve: '^1.1.5',
+196 silly install resolved        yo: '^1.4.7' },
+196 silly install resolved     peerDependencies: { yo: '^1.4.7' },
+196 silly install resolved     engines: { npm: '^2.0.0' },
+196 silly install resolved     license: 'Apache-2.0',
+196 silly install resolved     gitHead: '4e20fe33f5e523f80314cbc36b8a38d833cc134c',
+196 silly install resolved     _id: 'generator-kraken@2.1.1',
+196 silly install resolved     _shasum: '712bdcb8e2bb95250ac8724dc0cf4e51a26d4c44',
+196 silly install resolved     _from: 'generator-kraken@*',
+196 silly install resolved     _npmVersion: '2.11.2',
+196 silly install resolved     _nodeVersion: '0.12.5',
+196 silly install resolved     _npmUser: { name: 'grawk', email: 'mattedelman@gmail.com' },
+196 silly install resolved     dist:
+196 silly install resolved      { shasum: '712bdcb8e2bb95250ac8724dc0cf4e51a26d4c44',
+196 silly install resolved        tarball: 'http://registry.npmjs.org/generator-kraken/-/generator-kraken-2.1.1.tgz' },
+196 silly install resolved     maintainers: [ [Object], [Object], [Object], [Object], [Object], [Object] ],
+196 silly install resolved     directories: {},
+196 silly install resolved     _resolved: 'https://registry.npmjs.org/generator-kraken/-/generator-kraken-2.1.1.tgz',
+196 silly install resolved     readme: 'ERROR: No README data found!' } ]
+197 info install generator-chrome-extension@0.4.4 into /usr/local/lib
+198 info install generator-gulp-webapp@1.0.3 into /usr/local/lib
+199 info install generator-karma@1.0.0 into /usr/local/lib
+200 info install generator-gulp-angular@1.0.0 into /usr/local/lib
+201 info install generator-mocha@0.2.0 into /usr/local/lib
+202 info install generator-angular@0.14.0 into /usr/local/lib
+203 info install generator-kraken@2.1.1 into /usr/local/lib
+204 info installOne generator-chrome-extension@0.4.4
+205 verbose installOne of generator-chrome-extension to /usr/local/lib not in flight; installing
+206 info installOne generator-gulp-webapp@1.0.3
+207 verbose installOne of generator-gulp-webapp to /usr/local/lib not in flight; installing
+208 info installOne generator-karma@1.0.0
+209 verbose installOne of generator-karma to /usr/local/lib not in flight; installing
+210 info installOne generator-gulp-angular@1.0.0
+211 verbose installOne of generator-gulp-angular to /usr/local/lib not in flight; installing
+212 info installOne generator-mocha@0.2.0
+213 verbose installOne of generator-mocha to /usr/local/lib not in flight; installing
+214 info installOne generator-angular@0.14.0
+215 verbose installOne of generator-angular to /usr/local/lib not in flight; installing
+216 info installOne generator-kraken@2.1.1
+217 verbose installOne of generator-kraken to /usr/local/lib not in flight; installing
+218 verbose lock using /Users/arjun/.npm/_locks/generator-chrome-extensi-c182e046b1ca5ed1.lock for /usr/local/lib/node_modules/generator-chrome-extension
+219 verbose lock using /Users/arjun/.npm/_locks/generator-gulp-webapp-d88240e1c211c4cf.lock for /usr/local/lib/node_modules/generator-gulp-webapp
+220 verbose lock using /Users/arjun/.npm/_locks/generator-karma-86430db65453f6e8.lock for /usr/local/lib/node_modules/generator-karma
+221 verbose lock using /Users/arjun/.npm/_locks/generator-mocha-61e557bff6e23a34.lock for /usr/local/lib/node_modules/generator-mocha
+222 verbose lock using /Users/arjun/.npm/_locks/generator-gulp-angular-665ca2f517e39d56.lock for /usr/local/lib/node_modules/generator-gulp-angular
+223 verbose lock using /Users/arjun/.npm/_locks/generator-angular-8c05db5f74b13054.lock for /usr/local/lib/node_modules/generator-angular
+224 verbose lock using /Users/arjun/.npm/_locks/generator-kraken-f7407e736f834c5e.lock for /usr/local/lib/node_modules/generator-kraken
+225 silly install write writing generator-chrome-extension 0.4.4 to /usr/local/lib/node_modules/generator-chrome-extension
+226 silly install write writing generator-gulp-webapp 1.0.3 to /usr/local/lib/node_modules/generator-gulp-webapp
+227 silly install write writing generator-karma 1.0.0 to /usr/local/lib/node_modules/generator-karma
+228 silly install write writing generator-mocha 0.2.0 to /usr/local/lib/node_modules/generator-mocha
+229 silly install write writing generator-gulp-angular 1.0.0 to /usr/local/lib/node_modules/generator-gulp-angular
+230 silly install write writing generator-angular 0.14.0 to /usr/local/lib/node_modules/generator-angular
+231 silly install write writing generator-kraken 2.1.1 to /usr/local/lib/node_modules/generator-kraken
+232 verbose unbuild lib/node_modules/generator-chrome-extension
+233 verbose unbuild lib/node_modules/generator-gulp-webapp
+234 verbose unbuild lib/node_modules/generator-karma
+235 verbose unbuild lib/node_modules/generator-mocha
+236 verbose unbuild lib/node_modules/generator-gulp-angular
+237 verbose unbuild lib/node_modules/generator-angular
+238 verbose unbuild lib/node_modules/generator-kraken
+239 info preuninstall generator-chrome-extension@0.3.1
+240 info preuninstall generator-gulp-webapp@1.0.3
+241 info preuninstall generator-karma@0.8.3
+242 info preuninstall generator-gulp-angular@1.0.0
+243 info preuninstall generator-mocha@0.2.0
+244 info preuninstall generator-angular@0.10.0
+245 info preuninstall generator-kraken@1.1.2
+246 info uninstall generator-chrome-extension@0.3.1
+247 info uninstall generator-gulp-webapp@1.0.3
+248 info uninstall generator-karma@0.8.3
+249 info uninstall generator-gulp-angular@1.0.0
+250 info uninstall generator-mocha@0.2.0
+251 info uninstall generator-angular@0.10.0
+252 info uninstall generator-kraken@1.1.2
+253 verbose unbuild rmStuff generator-chrome-extension@0.3.1 from /usr/local/lib/node_modules
+254 info postuninstall generator-chrome-extension@0.3.1
+255 verbose unbuild rmStuff generator-gulp-webapp@1.0.3 from /usr/local/lib/node_modules
+256 info postuninstall generator-gulp-webapp@1.0.3
+257 verbose unbuild rmStuff generator-karma@0.8.3 from /usr/local/lib/node_modules
+258 info postuninstall generator-karma@0.8.3
+259 verbose unbuild rmStuff generator-gulp-angular@1.0.0 from /usr/local/lib/node_modules
+260 info postuninstall generator-gulp-angular@1.0.0
+261 verbose unbuild rmStuff generator-mocha@0.2.0 from /usr/local/lib/node_modules
+262 info postuninstall generator-mocha@0.2.0
+263 verbose unbuild rmStuff generator-angular@0.10.0 from /usr/local/lib/node_modules
+264 info postuninstall generator-angular@0.10.0
+265 verbose unbuild rmStuff generator-kraken@1.1.2 from /usr/local/lib/node_modules
+266 info postuninstall generator-kraken@1.1.2
+267 silly gentlyRm /usr/local/lib/node_modules/generator-chrome-extension is being purged from base /usr/local
+268 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/generator-chrome-extension
+269 silly gentlyRm /usr/local/lib/node_modules/generator-gulp-webapp is being purged from base /usr/local
+270 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/generator-gulp-webapp
+271 silly gentlyRm /usr/local/lib/node_modules/generator-karma is being purged from base /usr/local
+272 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/generator-karma
+273 silly gentlyRm /usr/local/lib/node_modules/generator-gulp-angular is being purged from base /usr/local
+274 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/generator-gulp-angular
+275 silly gentlyRm /usr/local/lib/node_modules/generator-mocha is being purged from base /usr/local
+276 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/generator-mocha
+277 silly gentlyRm /usr/local/lib/node_modules/generator-angular is being purged from base /usr/local
+278 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/generator-angular
+279 silly vacuum-fs purging /usr/local/lib/node_modules/generator-chrome-extension
+280 silly vacuum-fs purging /usr/local/lib/node_modules/generator-gulp-webapp
+281 silly vacuum-fs purging /usr/local/lib/node_modules/generator-karma
+282 silly vacuum-fs purging /usr/local/lib/node_modules/generator-gulp-angular
+283 silly vacuum-fs purging /usr/local/lib/node_modules/generator-mocha
+284 silly gentlyRm /usr/local/lib/node_modules/generator-kraken is being purged from base /usr/local
+285 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/generator-kraken
+286 silly vacuum-fs purging /usr/local/lib/node_modules/generator-angular
+287 silly vacuum-fs purging /usr/local/lib/node_modules/generator-kraken
+288 verbose unlock done using /Users/arjun/.npm/_locks/generator-chrome-extensi-c182e046b1ca5ed1.lock for /usr/local/lib/node_modules/generator-chrome-extension
+289 verbose unlock done using /Users/arjun/.npm/_locks/generator-gulp-webapp-d88240e1c211c4cf.lock for /usr/local/lib/node_modules/generator-gulp-webapp
+290 verbose unlock done using /Users/arjun/.npm/_locks/generator-karma-86430db65453f6e8.lock for /usr/local/lib/node_modules/generator-karma
+291 verbose unlock done using /Users/arjun/.npm/_locks/generator-gulp-angular-665ca2f517e39d56.lock for /usr/local/lib/node_modules/generator-gulp-angular
+292 verbose unlock done using /Users/arjun/.npm/_locks/generator-mocha-61e557bff6e23a34.lock for /usr/local/lib/node_modules/generator-mocha
+293 verbose unlock done using /Users/arjun/.npm/_locks/generator-angular-8c05db5f74b13054.lock for /usr/local/lib/node_modules/generator-angular
+294 verbose unlock done using /Users/arjun/.npm/_locks/generator-kraken-f7407e736f834c5e.lock for /usr/local/lib/node_modules/generator-kraken
+295 verbose stack Error: EACCES: permission denied, rmdir '/usr/local/lib/node_modules/generator-chrome-extension'
+295 verbose stack     at Error (native)
+296 verbose cwd /Users/arjun/work/jungle
+297 error Darwin 14.5.0
+298 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "install" "-g" "generator-angular" "generator-chrome-extension" "generator-gulp-angular" "generator-gulp-webapp" "generator-karma" "generator-kraken" "generator-mocha"
+299 error node v4.0.0
+300 error npm  v2.14.2
+301 error path /usr/local/lib/node_modules/generator-chrome-extension
+302 error code EACCES
+303 error errno -13
+304 error syscall rmdir
+305 error Error: EACCES: permission denied, rmdir '/usr/local/lib/node_modules/generator-chrome-extension'
+305 error     at Error (native)
+305 error  { [Error: EACCES: permission denied, rmdir '/usr/local/lib/node_modules/generator-chrome-extension']
+305 error   errno: -13,
+305 error   code: 'EACCES',
+305 error   syscall: 'rmdir',
+305 error   path: '/usr/local/lib/node_modules/generator-chrome-extension' }
+306 error Please try running this command again as root/Administrator.
+307 verbose exit [ -13, true ]
+308 verbose unbuild lib/node_modules/generator-chrome-extension
+309 info preuninstall generator-chrome-extension@0.3.1
+310 info uninstall generator-chrome-extension@0.3.1
+311 verbose unbuild rmStuff generator-chrome-extension@0.3.1 from /usr/local/lib/node_modules
+312 info postuninstall generator-chrome-extension@0.3.1
+313 silly gentlyRm /usr/local/lib/node_modules/generator-chrome-extension is being purged from base /usr/local
+314 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/generator-chrome-extension
+315 silly vacuum-fs purging /usr/local/lib/node_modules/generator-chrome-extension
+316 error error rolling back Error: EACCES: permission denied, rmdir '/usr/local/lib/node_modules/generator-chrome-extension'
+316 error error rolling back     at Error (native)
+316 error error rolling back  { [Error: EACCES: permission denied, rmdir '/usr/local/lib/node_modules/generator-chrome-extension']
+316 error error rolling back   errno: -13,
+316 error error rolling back   code: 'EACCES',
+316 error error rolling back   syscall: 'rmdir',
+316 error error rolling back   path: '/usr/local/lib/node_modules/generator-chrome-extension' }
