@@ -26,7 +26,7 @@ angular.module('consumers').controller('ConsumersController', ['$scope', '$state
 
 		// Remove existing Consumer
 		$scope.remove = function(consumer) {
-			if ( consumer ) { 
+			if ( consumer ) {
 				consumer.$remove();
 
 				for (var i in $scope.consumers) {
@@ -61,7 +61,7 @@ angular.module('consumers').controller('ConsumersController', ['$scope', '$state
 		// Find existing Consumer
 		$scope.findOne = function() {
 			$scope.pluginAvailable = PLUGINSAVAILABLE;
-			$scope.consumer = Consumers.get({ 
+			$scope.consumer = Consumers.get({
 				consumerId: $stateParams.consumerId
 			});
 		};
@@ -85,7 +85,7 @@ angular.module('consumers').controller('ConsumersController', ['$scope', '$state
 		};
 
 		$scope.removePlugin = function(plugin) {
-			if ( plugin ) { 
+			if ( plugin ) {
 				var pluginResource = new Plugins(plugin);
 				pluginResource.$remove();
 
@@ -134,8 +134,10 @@ angular.module('consumers').controller('ConsumersController', ['$scope', '$state
 
 		$scope.crudPlugin = function() {
 
-			$scope.plugin = $filter('filter')(PLUGINSAVAILABLE, 
-				function(element){ return $stateParams.pluginName === element.name}
+			$scope.plugin = $filter('filter')(PLUGINSAVAILABLE,
+				function(element){
+          return $stateParams.pluginName === element.name;
+        }
 			);
 
 			$scope.plugin = $scope.plugin[0];
@@ -143,7 +145,7 @@ angular.module('consumers').controller('ConsumersController', ['$scope', '$state
 			if ($scope.plugin.api === undefined) {
 				$location.path('consumers/' + $stateParams.consumerId);
 			}
-			
+
 			var routeList = $filter('filter')($scope.plugin.api.routes, {action: 'list'})[0];
 
 			var route = routeList.route.replace(':username', $stateParams.consumerId);
@@ -152,7 +154,7 @@ angular.module('consumers').controller('ConsumersController', ['$scope', '$state
 				success(function(data, status){
 					$scope.items = data;
 				});
-			
+
 		};
 
 		$scope.addRow = function() {
@@ -165,10 +167,11 @@ angular.module('consumers').controller('ConsumersController', ['$scope', '$state
 		};
 
 		$scope.saveItem = function(data, id, index) {
+      var routeList, route;
 			if (id === null) {
-				var routeList = $filter('filter')($scope.plugin.api.routes, {action: 'create'})[0];
+				routeList = $filter('filter')($scope.plugin.api.routes, {action: 'create'})[0];
 
-				var route = routeList.route.replace(':username', $stateParams.consumerId);
+				route = routeList.route.replace(':username', $stateParams.consumerId);
 
 				$http.post($localStorage.kongurl+'/'+route, data).
 					success(function(data, status){
@@ -176,11 +179,11 @@ angular.module('consumers').controller('ConsumersController', ['$scope', '$state
 					});
 
 			} else {
-				var routeList = $filter('filter')($scope.plugin.api.routes, {action: 'update'})[0];
+				routeList = $filter('filter')($scope.plugin.api.routes, {action: 'update'})[0];
 
-				var route = routeList.route.replace(':username', $stateParams.consumerId);
+				route = routeList.route.replace(':username', $stateParams.consumerId);
 
-				var route = route.replace(':id', id);
+				route = route.replace(':id', id);
 
 				$http.patch($localStorage.kongurl+'/'+route, data);
 			}
@@ -194,7 +197,7 @@ angular.module('consumers').controller('ConsumersController', ['$scope', '$state
 
 			var route = routeList.route.replace(':username', $stateParams.consumerId);
 
-			var route = route.replace(':id', id);
+			route = route.replace(':id', id);
 
 			$http.delete($localStorage.kongurl+'/'+route).
 				success(function(data, status){
@@ -206,7 +209,7 @@ angular.module('consumers').controller('ConsumersController', ['$scope', '$state
 			if ($scope.scroll.busy){
 				$scope.scroll.busy = false;
 				return;
-			} 
+			}
 
 			$scope.scroll.busy = true;
 

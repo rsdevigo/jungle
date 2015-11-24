@@ -1,4 +1,5 @@
 (function() {
+	'use strict';
 	// Apis Controller Spec
 	describe('Apis Controller Tests', function() {
 		// Initialize global variables
@@ -6,7 +7,9 @@
 		scope,
 		$httpBackend,
 		$stateParams,
-		$location;
+		$location,
+		$KONGURL,
+		$localStorage;
 
 		// The $resource service augments the response object with methods for updating and deleting the resource.
 		// If we were to use the standard toEqual matcher, our tests would fail because the test values would not match
@@ -134,7 +137,7 @@
 			// Set POST response
 			$httpBackend.expectPOST($KONGURL+'/apis', sampleApiPostData).respond(sampleApiResponse);
 			$httpBackend.when('GET', 'modules/apis/views/view-api.client.view.html').respond(200, {});
-			// Run controller functionality	
+			// Run controller functionality
 			scope.create();
 			$httpBackend.flush();
 

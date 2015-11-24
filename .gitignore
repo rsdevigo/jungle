@@ -4,3 +4,4 @@ dist
 .sass-cache
 lib/
 .vagrant
+npm-debug.log

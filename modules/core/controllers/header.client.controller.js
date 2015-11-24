@@ -15,8 +15,8 @@ angular.module('core').controller('HeaderController', ['$scope', '$location', '$
 			$scope.isCollapsed = false;
 		});
 
-		$scope.setKongUrl = function() {			
-			var url = this.url = this.url.replace(/\/$/, "");			
+		$scope.setKongUrl = function() {
+			var url = this.url = this.url.replace(/\/$/, '');			
 			$http.get(this.url).success(function(data, status){
 				if (status === 200) {
 					$localStorage.kongurl = url;
@@ -26,9 +26,9 @@ angular.module('core').controller('HeaderController', ['$scope', '$location', '$
 				}
 			}).
 			error(function(data, status){
-				
+
 			});
-			
+
 		};
 
 		$scope.removeKongUrl = function() {
