@@ -16,7 +16,7 @@ angular.module('core').controller('HeaderController', ['$scope', '$location', '$
 		});
 
 		$scope.setKongUrl = function() {
-			var url = this.url = this.url.replace(/\/$/, '');			
+			var url = this.url = this.url.replace(/\/$/, '');
 			$http.get(this.url).success(function(data, status){
 				if (status === 200) {
 					$localStorage.kongurl = url;
@@ -33,6 +33,7 @@ angular.module('core').controller('HeaderController', ['$scope', '$location', '$
 
 		$scope.removeKongUrl = function() {
 			delete $localStorage.kongurl;
+			$localStorage.hasDisconnected = true;
 			setTimeout(function () {
 		        $window.location.reload();
 		    }, 1000);
