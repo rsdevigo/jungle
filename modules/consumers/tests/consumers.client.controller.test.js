@@ -88,7 +88,7 @@
 			$stateParams.consumerId = '525a8422f6d0f87f0e407a33';
 
 			// Set GET response
-			$httpBackend.expectGET(/http:\/\/localhost:8000\/kongapi\/consumers\/([0-9a-fA-F]{24})$/).respond(sampleConsumer);
+			$httpBackend.expectGET(/http:\/\/localhost:8001\/consumers\/([0-9a-fA-F]{24})$/).respond(sampleConsumer);
 
 			// Run controller functionality
 			scope.findOne();
@@ -143,7 +143,7 @@
 			scope.consumer = sampleConsumerPutData;
 
 			// Set PUT response
-			$httpBackend.expectPATCH(/http:\/\/localhost:8000\/kongapi\/consumers\/([0-9a-fA-F]{24})$/).respond();
+			$httpBackend.expectPATCH(/http:\/\/localhost:8001\/consumers\/([0-9a-fA-F]{24})$/).respond();
 			$httpBackend.when('GET', 'modules/consumers/views/view-consumer.client.view.html').respond(200, {});
 			// Run controller functionality
 			scope.update();
