@@ -4,7 +4,7 @@
 	"description": "GUI of Kong API Gateway",
 	"dependencies": {
 		"bootstrap": "~3",
-		"angular": "*",
+		"angular": "~1.2",
 		"angular-resource": "~1.2",
 		"angular-mocks": "~1.2",
 		"angular-cookies": "~1.2",
